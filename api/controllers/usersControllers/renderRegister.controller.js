@@ -1,2 +1,2 @@
 exports.renderRegisterController = (_, res) =>
-  res.send("respond with a resource");
+  res.status(200).render("users/register");
