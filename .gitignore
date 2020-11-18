@@ -1,0 +1,9 @@
+# Node Modules
+node_modules/
+
+# DS_Store & .vscode
+DS_Store
+.vscode
+
+# Environment variables
+.env
