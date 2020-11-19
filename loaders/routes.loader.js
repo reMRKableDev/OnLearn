@@ -1,7 +1,7 @@
 const createError = require('http-errors');
 const { apiPrefix } = require('../configs');
-const indexRouter = require('../api/routes');
-const userRouter = require('../api/routes/users');
+const indexRouter = require('../api/routes/index.routes');
+const userRouter = require('../api/routes/users.routes');
 
 module.exports = (app) => {
   app.use(apiPrefix, indexRouter);
