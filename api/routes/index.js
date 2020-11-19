@@ -1,8 +1,8 @@
-const { Router } = require("express");
-const { renderIndexViewController } = require("../controllers");
+const { Router } = require('express');
+const { renderIndexViewController } = require('../controllers');
 
 const router = Router();
 
-router.get("/", renderIndexViewController);
+router.get('/', renderIndexViewController);
 
 module.exports = router;

@@ -1,3 +1,3 @@
-const { renderIndexViewController } = require("./renderIndexView.controller");
+const { renderIndexViewController } = require('./renderIndexView.controller');
 
 module.exports = { renderIndexViewController };

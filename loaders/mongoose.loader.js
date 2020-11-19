@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const { localMongoUri } = require("../configs");
+const mongoose = require('mongoose');
+const { localMongoUri } = require('../configs');
 
 module.exports = async () => {
   try {

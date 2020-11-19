@@ -1,9 +1,11 @@
-const createError = require("http-errors");
-const { apiPrefix } = require("../configs");
+const createError = require('http-errors');
+const { apiPrefix } = require('../configs');
+const indexRouter = require('../api/routes');
+const userRouter = require('../api/routes/users');
 
 module.exports = (app) => {
-  app.use(apiPrefix, require("../api/routes/"));
-  app.use(apiPrefix, require("../api/routes/users"));
+  app.use(apiPrefix, indexRouter);
+  app.use(apiPrefix, userRouter);
 
   // Catch 404's and forward to error handler below
   app.use((req, res, next) => {
@@ -11,13 +13,13 @@ module.exports = (app) => {
   });
 
   // Error handler
-  app.use(function (err, req, res) {
+  app.use((err, req, res) => {
     // set locals, only providing error in development
     res.locals.message = err.message;
-    res.locals.error = req.app.get("env") === "development" ? err : {};
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
     // render the error page
     res.status(err.status || 500);
-    res.render("error");
+    res.render('error');
   });
 };

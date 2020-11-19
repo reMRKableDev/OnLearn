@@ -1,3 +1,3 @@
-const { renderRegisterController } = require("./renderRegister.controller");
+const { renderRegisterController } = require('./renderRegister.controller');
 
 module.exports = { renderRegisterController };

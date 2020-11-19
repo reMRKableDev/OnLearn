@@ -1,7 +1,7 @@
-const { Router } = require("express");
+const { Router } = require('express');
 
-const { renderRegisterController } = require("../controllers");
-const { registerPrefix } = require("../../configs");
+const { renderRegisterController } = require('../controllers');
+const { registerPrefix } = require('../../configs');
 
 const router = Router();
 

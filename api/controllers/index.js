@@ -1,4 +1,4 @@
-const { renderIndexViewController } = require("./indexControllers");
-const { renderRegisterController } = require("./usersControllers");
+const { renderIndexViewController } = require('./indexControllers');
+const { renderRegisterController } = require('./usersControllers');
 
 module.exports = { renderIndexViewController, renderRegisterController };
