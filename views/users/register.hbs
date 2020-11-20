@@ -1,40 +1,55 @@
 <section>
-    <h1>Register</h1>
-    <form action="/users/signup" method="post">
-        <div>
-            <label>Account Type</label>
-            <br />
-            <select name="role">
-                <option value="student">Student</option>
-                <option value="instructor">Instructor</option>
-            </select>
-        </div>
-        <div>
-            <label for="name">First Name</label>
-            <input type="text" id="username" name="firstName" value="{{firstName}}">
-        </div>
-        <div>
-            <label for="name">Last Name</label>
-            <input type="text" id="username" name="lastName" value="{{lastName}}">
-        </div>
-        <div>
-            <label for="email">E-mail</label>
-            <input type="text" id="email" name="email" value="{{email}}">
-        </div>
-        <div>
-            <label for="name">Username</label>
-            <input type="text" id="username" name="username" value="{{username}}">
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" value="{{password}}">
-        </div>
-        <div>
-            <label for="password2">Confirm Password</label>
-            <input type="password" id="password2" name="password2" value="{{password2}}">
-        </div>
-        <button type="submit">Sign Up</button>
-    </form>
-    <br />
-    <p>Already have an account? <a href="/api/login">Sign In</a></p>
+    <div>
+        {{#if errors}}
+        <ul>
+            {{#each errors}}
+            <li>
+                <div>
+                    {{msg}}
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </div>
+    <div>
+        <h1>Register</h1>
+        <form action="/api/register" method="post">
+            <div>
+                <label>Account Type</label>
+                <br />
+                <select name="role">
+                    <option value="student">Student</option>
+                    <option value="instructor">Instructor</option>
+                </select>
+            </div>
+            <div>
+                <label for="name">First Name</label>
+                <input type="text" id="username" name="firstName" value="{{firstName}}">
+            </div>
+            <div>
+                <label for="name">Last Name</label>
+                <input type="text" id="username" name="lastName" value="{{lastName}}">
+            </div>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" value="{{email}}">
+            </div>
+            <div>
+                <label for="name">Username</label>
+                <input type="text" id="username" name="username" value="{{username}}">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" value="{{password}}">
+            </div>
+            <div>
+                <label for="password2">Confirm Password</label>
+                <input type="password" id="password2" name="password2" value="{{password2}}">
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <br />
+        <p>Already have an account? <a href="/api/login">Sign In</a></p>
+    </div>
 </section>
