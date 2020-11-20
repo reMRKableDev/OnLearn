@@ -8,6 +8,23 @@
     "test": "jest --watchAll=true",
     "coverage": "jest --coverage --watchAll=false"
   },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "*.js",
+      "api/*",
+      "!prettier.config.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    }
+  },
   "dependencies": {
     "connect-flash": "^0.1.1",
     "cookie-parser": "1.4.5",
