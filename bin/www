@@ -6,7 +6,7 @@
 
 const debug = require('debug')('node-onlearn:server');
 const http = require('http');
-const app = require('../app');
+const app = require('../src/app');
 
 /**
  * Normalize a port into a number, string, or false.
