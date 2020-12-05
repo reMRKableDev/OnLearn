@@ -3,7 +3,7 @@ require('dotenv').config();
 const { LOCAL_MONGO_URI, SESSION_SECRET } = process.env;
 
 module.exports = {
-  apiPrefix: '/api',
+  apiPrefix: '/',
   registerPrefix: '/register',
   loginPrefix: '/login',
   logoutPrefix: '/logout',

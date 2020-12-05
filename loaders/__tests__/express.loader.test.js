@@ -4,7 +4,7 @@ const {
   validateArrayLength,
   validateStringEquality,
   validateArrayContaining,
-} = require('../../utils/testValidators.utils');
+} = require('../../utils/validators.utils');
 
 describe('Express Loaders Test Suite', () => {
   test(`should validate that loaded object isn't empty`, () => {
