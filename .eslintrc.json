@@ -16,7 +16,7 @@
     "ecmaVersion": 11
   },
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", { "singleQuote": true }],
     "no-console": "off",
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
