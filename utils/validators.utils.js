@@ -5,8 +5,8 @@ exports.validateNotEmpty = (received) => {
 };
 
 exports.validateStringEquality = (received, expected) => {
-  expect(received).not.toMatch('dummy');
-  expect(received).toMatch(expected);
+  expect(received).not.toEqual('dummy');
+  expect(received).toEqual(expected);
 };
 
 exports.validateArrayLength = (received, expected) => {
@@ -32,4 +32,9 @@ exports.validateMockResponseRenderToHaveBeenCalled = (mockRender) => {
 exports.validateMockResponseSendToHaveBeenCalled = (mockSend) => {
   expect(mockSend).not.toHaveBeenCalledTimes(100);
   expect(mockSend).toHaveBeenCalled();
+};
+
+exports.validateControllerUsed = (received, controller) => {
+  expect(received).not.toBe(() => 'dummy');
+  expect(received).toBe(controller);
 };
