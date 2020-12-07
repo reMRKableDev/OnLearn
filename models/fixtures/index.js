@@ -1,3 +1,5 @@
+const { dummyPassword } = require('../../configs');
+
 exports.fakeClassDataNoLessons = {
   title: 'Dummy Class',
   description: 'Dummy Description',
@@ -17,7 +19,7 @@ exports.fakeUserDataNoClasses = {
 exports.fakeUserData = {
   username: 'studentUser',
   email: 'student@student.com',
-  password: '********',
+  password: dummyPassword,
   role: 'student',
 };
 
