@@ -1,34 +1,28 @@
-const { dbConnect, dbDisconnect } = require('../../utils/dbHandler.utils');
 const User = require('../user.model');
+const { fakeUserData, fakeUserDataEmptyFields } = require('../fixtures');
 const {
   validateNotEmpty,
   validateObjectMatch,
   validateMongoValidatorError,
   validateMongoDuplicationError,
 } = require('../../utils/validators.utils');
+const { dbConnect, dbDisconnect } = require('../../utils/dbHandler.utils');
 
 beforeAll(async () => dbConnect());
 afterAll(async () => dbDisconnect());
 
 describe('User Model Test Suite', () => {
-  const fakeStudentData = {
-    username: 'studentUser',
-    email: 'student@student.com',
-    password: 'student123',
-    role: 'student',
-  };
-
   test('should validate saving a new student user successfully', async () => {
-    const validStudentUser = new User(fakeStudentData);
+    const validStudentUser = new User(fakeUserData);
     const savedStudentUser = await validStudentUser.save();
 
     validateNotEmpty(savedStudentUser);
-    validateObjectMatch(savedStudentUser, fakeStudentData);
+    validateObjectMatch(savedStudentUser, fakeUserData);
   });
 
   test('should validate MongoError duplicate error with code 11000', async () => {
     expect.assertions(4);
-    const validStudentUser = new User(fakeStudentData);
+    const validStudentUser = new User(fakeUserData);
 
     try {
       await validStudentUser.save();
@@ -39,14 +33,7 @@ describe('User Model Test Suite', () => {
   });
 
   test('should validate Validator Error for empty fields', async () => {
-    const fakeStudentDataEmptyFields = {
-      username: '',
-      email: '',
-      password: '',
-      role: 'student',
-    };
-
-    const validStudentUser = new User(fakeStudentDataEmptyFields);
+    const validStudentUser = new User(fakeUserDataEmptyFields);
 
     try {
       await validStudentUser.save();
