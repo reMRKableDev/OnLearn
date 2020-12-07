@@ -1,4 +1,3 @@
-const { dummyPassword } = require('../../../configs');
 const { fakeUserData } = require('../../../models/fixtures');
 const { createNewUserInstanceService } = require('../index');
 const { dbConnect, dbDisconnect } = require('../../../utils/dbHandler.utils');
