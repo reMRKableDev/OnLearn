@@ -21,19 +21,20 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-        
+
     - name: Create .env file
       run: |
         touch .env
         echo DUMMY_PASSWORD=${{ secrets.DUMMY_PASSWORD }} >> .env
-        
+
+    - name: Run CI, build & coverage
     - run: npm ci
     - run: npm run build --if-present
     - run: npm run coverage
       env:
         CI: true
 
-    - name: Codecov
+    - name: Collect coverage to Codecov
       uses: codecov/codecov-action@v1.0.15
       with:
           token: ${{ secrets.CODECOV_TOKEN }}
