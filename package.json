@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "dev": "DEBUG=node-onlearn:* nodemon ./bin/www",
     "test": "jest --watchAll=true --runInBand --detectOpenHandles",
-    "coverage": "jest --coverage --watchAll=false"
+    "coverage": "jest --coverage --runInBand"
   },
   "jest": {
     "testEnvironment": "node",
