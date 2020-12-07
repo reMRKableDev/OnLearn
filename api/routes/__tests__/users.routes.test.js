@@ -1,5 +1,4 @@
 const usersRouter = require('../users.routes');
-const { validateRegistrationForm } = require('../../middleware');
 const {
   createNewUserController,
   renderRegisterController,
