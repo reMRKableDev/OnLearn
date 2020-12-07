@@ -9,6 +9,8 @@ const { sessSecret } = require('../configs');
 
 const app = express();
 
+app.disable('x-powered-by');
+
 hbs.registerPartials(path.join(__dirname, '../views/partials'));
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'hbs');
