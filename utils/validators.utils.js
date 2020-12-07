@@ -38,3 +38,29 @@ exports.validateControllerUsed = (received, controller) => {
   expect(received).not.toBe(() => 'dummy');
   expect(received).toBe(controller);
 };
+
+exports.validateObjectMatch = (received, expected) => {
+  expect(received).not.toMatchObject({ fake: null });
+  expect(received).toMatchObject(expected);
+};
+
+exports.validateMongoDuplicationError = (name, code) => {
+  expect(name).not.toEqual(/dummy/i);
+  expect(name).toEqual('MongoError');
+  expect(code).not.toBe(255);
+  expect(code).toBe(11000);
+};
+
+exports.validateMongoValidatorError = (name, message) => {
+  expect(name).not.toEqual(/dummy/i);
+  expect(name).toEqual('ValidatorError');
+
+  const expectedMessages = [
+    'Username is required.',
+    'Email is required.',
+    'Password is required.',
+  ];
+
+  expect(expectedMessages).not.toContain('bla bla bla');
+  expect(expectedMessages).toContain(message);
+};
