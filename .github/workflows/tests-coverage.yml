@@ -27,7 +27,6 @@ jobs:
         touch .env
         echo DUMMY_PASSWORD=${{ secrets.DUMMY_PASSWORD }} >> .env
 
-    - name: Run CI, build & coverage
     - run: npm ci
     - run: npm run build --if-present
     - run: npm run coverage
