@@ -10,6 +10,3 @@ DS_Store
 
 # Coverage
 coverage/
-
-# Fixtures
-models/fixtures
