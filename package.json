@@ -17,13 +17,14 @@
       "configs/*.js",
       "api/**/*.js",
       "models/**/*.js",
+      "services/**/*.js",
       "loaders/*",
       "!prettier.config.js"
     ],
     "coverageThreshold": {
       "global": {
         "branches": 10,
-        "functions": 45,
+        "functions": 40,
         "lines": 75,
         "statements": 75
       }
