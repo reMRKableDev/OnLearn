@@ -3,11 +3,11 @@ const { createNewUserInstanceService } = require('../index');
 const {
   dbConnect,
   dbDisconnect,
-} = require('../../../utils/test-utils/dbHandler.utils');
+} = require('../../../../utils/test-utils/dbHandler.utils');
 const {
   validateNotEmpty,
   validateObjectMatch,
-} = require('../../../utils/test-utils/validators.utils');
+} = require('../../../../utils/test-utils/validators.utils');
 
 beforeAll(async () => dbConnect());
 afterAll(async () => dbDisconnect());

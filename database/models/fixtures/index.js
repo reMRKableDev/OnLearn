@@ -1,4 +1,4 @@
-const { dummyPassword } = require('../../configs');
+const { dummyPassword } = require('../../../configs');
 
 exports.fakeClassDataNoLessons = {
   title: 'Dummy Class',

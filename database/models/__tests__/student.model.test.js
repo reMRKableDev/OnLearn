@@ -1,10 +1,12 @@
 const Student = require('../student.model');
 const { fakeUserDataNoClasses } = require('../fixtures');
-const { validateNotEmpty } = require('../../utils/test-utils/validators.utils');
+const {
+  validateNotEmpty,
+} = require('../../../utils/test-utils/validators.utils');
 const {
   dbConnect,
   dbDisconnect,
-} = require('../../utils/test-utils/dbHandler.utils');
+} = require('../../../utils/test-utils/dbHandler.utils');
 
 beforeAll(async () => dbConnect());
 afterAll(async () => dbDisconnect());
