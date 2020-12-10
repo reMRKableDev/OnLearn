@@ -1,12 +1,16 @@
-exports.renderRegistrationFormWithErrorsHelper = (resObj, reqBody, errObj) => {
-  const { firstName, lastName, email, username, password } = reqBody;
+exports.renderRegistrationFormWithErrorsHelper = (
+  response,
+  requestBody,
+  error
+) => {
+  const { firstName, lastName, email, username, password } = requestBody;
 
-  resObj.status(400).render('users/register', {
+  response.status(400).render('users/register', {
     firstName,
     lastName,
     email,
     username,
     password,
-    errors: errObj.array(),
+    errors: error.array(),
   });
 };
