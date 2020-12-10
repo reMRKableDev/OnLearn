@@ -1,3 +1,3 @@
-const { createNewUserService } = require('./createNewUserInstance.service');
+const { createNewUserService } = require('./createNewUser.service');
 
 module.exports = { createNewUserService };
