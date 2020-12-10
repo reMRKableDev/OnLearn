@@ -1,7 +1,11 @@
 exports.validateNotEmpty = (received) => {
   expect(received).not.toBeNull();
   expect(received).not.toBeUndefined();
-  expect(received).not.toBeFalsy();
+  expect(received).toBeTruthy();
+};
+
+exports.validateUndefined = (received) => {
+  expect(received).toBeUndefined();
 };
 
 exports.validateStringEquality = (received, expected) => {
@@ -63,4 +67,9 @@ exports.validateMongoValidatorError = (name, message) => {
 
   expect(expectedMessages).not.toContain('bla bla bla');
   expect(expectedMessages).toContain(message);
+};
+
+exports.validateTypeOfFunction = (received) => {
+  expect(typeof received).not.toBe('number');
+  expect(typeof received).toBe('function');
 };
