@@ -2,12 +2,12 @@ const { renderRegistrationFormWithErrorsHelper } = require('../index');
 const {
   validateMockResponseStatusToHaveBeenCalled,
   validateMockResponseRenderToHaveBeenCalled,
-} = require('../../../../utils/validators.utils');
+} = require('../../../../utils/test-utils/validators.utils');
 
 const {
   mockResponse,
   mockErrorRequest,
-} = require('../../../../utils/interceptors.utils');
+} = require('../../../../utils/test-utils/interceptors.utils');
 
 let req;
 let res;

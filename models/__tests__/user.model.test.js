@@ -5,8 +5,11 @@ const {
   validateObjectMatch,
   validateMongoValidatorError,
   validateMongoDuplicationError,
-} = require('../../utils/validators.utils');
-const { dbConnect, dbDisconnect } = require('../../utils/dbHandler.utils');
+} = require('../../utils/test-utils/validators.utils');
+const {
+  dbConnect,
+  dbDisconnect,
+} = require('../../utils/test-utils/dbHandler.utils');
 
 beforeAll(async () => dbConnect());
 afterAll(async () => dbDisconnect());

@@ -8,7 +8,7 @@ const {
   validateNotEmpty,
   validateControllerUsed,
   validateStringEquality,
-} = require('../../../utils/validators.utils');
+} = require('../../../utils/test-utils/validators.utils');
 
 describe('Users Router Test Suite', () => {
   test('should validate GET route handler', () => {

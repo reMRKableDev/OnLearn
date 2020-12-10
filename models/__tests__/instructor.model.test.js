@@ -1,7 +1,10 @@
 const Instructor = require('../instructor.model');
 const { fakeInstructorDataNoClasses } = require('../fixtures');
-const { validateNotEmpty } = require('../../utils/validators.utils');
-const { dbConnect, dbDisconnect } = require('../../utils/dbHandler.utils');
+const { validateNotEmpty } = require('../../utils/test-utils/validators.utils');
+const {
+  dbConnect,
+  dbDisconnect,
+} = require('../../utils/test-utils/dbHandler.utils');
 
 beforeAll(async () => dbConnect());
 afterAll(async () => dbDisconnect());

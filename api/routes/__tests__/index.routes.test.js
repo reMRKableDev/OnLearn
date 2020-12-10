@@ -5,7 +5,7 @@ const {
   validateNotEmpty,
   validateControllerUsed,
   validateStringEquality,
-} = require('../../../utils/validators.utils');
+} = require('../../../utils/test-utils/validators.utils');
 
 describe('Index Router Test Suite', () => {
   test('should validate router', () => {

@@ -1,10 +1,13 @@
 const { fakeUserData } = require('../../../models/fixtures');
 const { createNewUserInstanceService } = require('../index');
-const { dbConnect, dbDisconnect } = require('../../../utils/dbHandler.utils');
+const {
+  dbConnect,
+  dbDisconnect,
+} = require('../../../utils/test-utils/dbHandler.utils');
 const {
   validateNotEmpty,
   validateObjectMatch,
-} = require('../../../utils/validators.utils');
+} = require('../../../utils/test-utils/validators.utils');
 
 beforeAll(async () => dbConnect());
 afterAll(async () => dbDisconnect());
