@@ -1,5 +1,5 @@
 const { fakeUserData } = require('../../../models/fixtures');
-const { createNewUserInstanceService } = require('../index');
+const { createNewUserService } = require('../index');
 const {
   dbConnect,
   dbDisconnect,
@@ -13,20 +13,12 @@ beforeAll(async () => dbConnect());
 afterAll(async () => dbDisconnect());
 
 describe('Create New User Instance Test Suite', () => {
-  test('should validate new user instance created', async () => {
+  test('should validate new user created from incoming data', async () => {
     expect.assertions(5);
 
-    const newUserInstance = await createNewUserInstanceService(fakeUserData);
+    const newUser = await createNewUserService(fakeUserData);
 
-    validateNotEmpty(newUserInstance);
-    validateObjectMatch(newUserInstance, fakeUserData);
-  });
-
-  test('should validate new user ins', async () => {
-    try {
-      await createNewUserInstanceService();
-    } catch (error) {
-      expect(error).toMatch(/Error when creating new User/i);
-    }
+    validateNotEmpty(newUser);
+    validateObjectMatch(newUser, fakeUserData);
   });
 });
