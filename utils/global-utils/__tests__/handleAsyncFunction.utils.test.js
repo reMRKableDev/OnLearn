@@ -1,4 +1,4 @@
-const { handleAsyncFunction } = require('../handleAsyncFunction.utils');
+const { handleAsyncFunction } = require('../index');
 const {
   validateNotEmpty,
   validateUndefined,

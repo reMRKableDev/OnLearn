@@ -1,5 +1,8 @@
 const { validationResult } = require('express-validator');
-const { renderRegistrationFormWithErrorsHelper } = require('../helpers');
+const {
+  createNewUserHelper,
+  renderRegistrationFormWithErrorsHelper,
+} = require('../helpers');
 
 exports.createNewUserController = (req, res) => {
   // const { role } = req.body;
@@ -7,5 +10,5 @@ exports.createNewUserController = (req, res) => {
 
   return errors.array().length
     ? renderRegistrationFormWithErrorsHelper(res, req.body, errors)
-    : res.send('posted');
+    : createNewUserHelper(req.body, res);
 };
