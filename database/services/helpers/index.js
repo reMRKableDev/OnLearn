@@ -1,3 +1,4 @@
 const { createNewUserByModelHelper } = require('./createNewUserByModel.helper');
+const { hashPasswordHelper } = require('./hashPassword.helper');
 
-module.exports = { createNewUserByModelHelper };
+module.exports = { hashPasswordHelper, createNewUserByModelHelper };
