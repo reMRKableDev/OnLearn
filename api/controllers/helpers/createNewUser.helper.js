@@ -20,6 +20,17 @@ exports.createNewUserHelper = async (request, response) => {
   // todo: add user to session
   // todo: redirect to route that renders profile
 
-  request.flash('success_msg', 'New user added');
-  response.status(200).render('users/profile', isNewUserByRole);
+  console.log('REQUEST OBJECT', request);
+
+  request.login(isNewUserByRole, (err) => {
+    if (err) {
+      response
+        .status(500)
+        .render('users/register', { message: 'Login after signup went bad.' });
+      return;
+    }
+
+    request.flash('success_msg', 'New User Added');
+    response.redirect(`/profile/${request.user.username}`);
+  });
 };

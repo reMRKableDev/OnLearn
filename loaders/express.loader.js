@@ -27,7 +27,6 @@ app.use(
     secret: sessSecret,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true },
   })
 );
 app.use(flash());

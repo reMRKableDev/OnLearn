@@ -1,18 +1,10 @@
 const { Router } = require('express');
-const { registerPrefix } = require('../../configs');
-const { validateRegistrationForm } = require('../middleware');
-const {
-  createNewUserController,
-  renderRegisterController,
-} = require('../controllers');
+const { profilePrefix } = require('../../configs');
 
 const router = Router();
 
-router.get(registerPrefix, renderRegisterController);
-router.post(
-  registerPrefix,
-  validateRegistrationForm(),
-  createNewUserController
-);
+router.get(profilePrefix, (req, res) => {
+  res.status(200).render('users/profile', req.user);
+});
 
 module.exports = router;
