@@ -4,8 +4,7 @@ const {
   renderRegistrationFormWithErrorsHelper,
 } = require('../helpers');
 
-exports.createNewUserController = (req, res) => {
-  // const { role } = req.body;
+exports.createNewUserController = async (req, res) => {
   const errors = validationResult(req);
 
   return errors.array().length
