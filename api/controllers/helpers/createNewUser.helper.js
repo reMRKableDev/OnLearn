@@ -1,21 +1,25 @@
 const { handleIfAsyncErrorHelper } = require('./handleIfAsyncError.helper');
+const { saveNewUserByRoleHelper } = require('./saveNewUserByRole.helper');
 const { isString } = require('../../../utils/global-utils');
 const {
   createNewUserService,
-} = require('../../../database/services/userServices');
+} = require('../../../database/services/modelServices/userServices');
 
-exports.createNewUserHelper = async (requestBody, response) => {
-  const isNewUser = await createNewUserService(requestBody);
+exports.createNewUserHelper = async (request, response) => {
+  const isNewUser = await createNewUserService(request.body);
 
-  const handledResults = handleIfAsyncErrorHelper(isNewUser);
+  const isHandledResults = handleIfAsyncErrorHelper(isNewUser);
 
-  return isString(handledResults)
-    ? response.status(409).send(handledResults)
-    : response.status(200).send(handledResults);
+  if (isString(isHandledResults)) {
+    response.status(409).send(isHandledResults);
+    return;
+  }
 
-    // todo: save new student & instructor
+  const isNewUserByRole = await saveNewUserByRoleHelper(request.body);
 
-  /* isNewUser.role.match(/student/i)
-    ? console.log('Time to make a student user')
-    : console.log('Time to make an instructor user'); */
+  // todo: add user to session
+  // todo: redirect to route that renders profile
+
+  request.flash('success_msg', 'New user added');
+  response.status(200).render('users/profile', isNewUserByRole);
 };

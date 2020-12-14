@@ -9,6 +9,6 @@ exports.createNewUserController = (req, res) => {
   const errors = validationResult(req);
 
   return errors.array().length
-    ? renderRegistrationFormWithErrorsHelper(res, req.body, errors)
-    : createNewUserHelper(req.body, res);
+    ? renderRegistrationFormWithErrorsHelper(res, req, errors)
+    : createNewUserHelper(req, res);
 };

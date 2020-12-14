@@ -1,9 +1,5 @@
-exports.renderRegistrationFormWithErrorsHelper = (
-  response,
-  requestBody,
-  error
-) => {
-  const { firstName, lastName, email, username, password } = requestBody;
+exports.renderRegistrationFormWithErrorsHelper = (response, request, error) => {
+  const { firstName, lastName, email, username, password } = request.body;
 
   response.status(400).render('users/register', {
     firstName,
