@@ -41,7 +41,7 @@
     "hbs": "4.1.1",
     "http-errors": "1.8.0",
     "mongodb-memory-server": "6.9.2",
-    "mongoose": "5.11.7",
+    "mongoose": "5.11.8",
     "morgan": "1.10.0"
   },
   "devDependencies": {
