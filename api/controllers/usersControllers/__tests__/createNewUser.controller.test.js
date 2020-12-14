@@ -12,11 +12,11 @@ describe('createNewUserController Test Suite', () => {
     jest.clearAllMocks();
   });
 
-  test('should validate res.send gets sent', () => {
+  test('should validate res.send gets sent', async () => {
     const req = mockRequest();
     const res = mockResponse();
 
-    createNewUserController(req, res);
+    await createNewUserController(req, res);
     const { send } = res;
 
     validateMockResponseSendToHaveBeenCalled(send);
