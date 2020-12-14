@@ -10,12 +10,11 @@ exports.createNewUserHelper = async (request, response) => {
   const isHandledResults = handleIfAsyncErrorHelper(isNewUser);
 
   if (isString(isHandledResults)) {
-    response.status(409).send(isHandledResults);
+    response
+      .status(409)
+      .render('users/register', { message: isHandledResults });
     return;
   }
-
-  // todo: add user to session
-  // todo: redirect to route that renders profile
 
   request.login(isHandledResults, (err) => {
     if (err) {

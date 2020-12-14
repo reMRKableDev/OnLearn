@@ -6,12 +6,19 @@ const {
 const { hashPasswordHelper } = require('../../helpers');
 
 exports.createNewUserService = async (requestBody) => {
-  const { email, username, password, role } = requestBody;
+  const { firstName, lastName, email, username, password, role } = requestBody;
 
   const isHashedPassword = await hashPasswordHelper(password);
 
   const [results, error] = await handleAsyncFunction(
-    User.create({ email, username, password: isHashedPassword, role })
+    User.create({
+      role,
+      email,
+      username,
+      lastName,
+      firstName,
+      password: isHashedPassword,
+    })
   );
 
   return results || error;
