@@ -2,9 +2,11 @@ const createError = require('http-errors');
 const { apiPrefix } = require('../configs');
 const indexRouter = require('../api/routes/index.routes');
 const usersAuthRouter = require('../api/routes/users-auth.routes');
+const usersRouter = require('../api/routes/users.routes');
 
 module.exports = (app) => {
   app.use(apiPrefix, indexRouter);
+  app.use(apiPrefix, usersRouter);
   app.use(apiPrefix, usersAuthRouter);
 
   // Catch 404's and forward to error handler below

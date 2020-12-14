@@ -2,10 +2,12 @@ const hbs = require('hbs');
 const path = require('path');
 const logger = require('morgan');
 const express = require('express');
+const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const { sessSecret } = require('../configs');
+require('../passport');
 
 const app = express();
 
@@ -29,7 +31,11 @@ app.use(
     saveUninitialized: true,
   })
 );
+
 app.use(flash());
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Global Variables - messages for the view
 app.use((req, res, next) => {
