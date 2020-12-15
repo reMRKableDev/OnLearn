@@ -10,7 +10,6 @@ const { sessSecret } = require('../configs');
 require('../passport');
 
 const app = express();
-
 app.disable('x-powered-by');
 
 hbs.registerPartials(path.join(__dirname, '../views/partials'));
