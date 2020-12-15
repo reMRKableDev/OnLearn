@@ -32,10 +32,12 @@ describe('Express Loaders Test Suite', () => {
       'urlencodedParser',
       'serveStatic',
       'session',
+      'initialize',
+      'authenticate',
     ];
 
     validateNotEmpty(stack);
-    validateArrayLength(stack, 10);
+    validateArrayLength(stack, 12);
     validateArrayContaining(receivedStackLayerNames, expectedStackLayerNames);
   });
 });
