@@ -17,8 +17,8 @@ describe('createNewUserController Test Suite', () => {
     const res = mockResponse();
 
     await createNewUserController(req, res);
-    const { render } = res;
+    const { login } = req;
 
-    validateMockValueToHaveBeenCalled(render);
+    validateMockValueToHaveBeenCalled(login);
   });
 });

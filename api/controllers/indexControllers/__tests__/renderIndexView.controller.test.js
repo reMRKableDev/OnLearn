@@ -1,7 +1,6 @@
 const { renderIndexViewController } = require('../index');
 const {
-  validateMockResponseStatusToHaveBeenCalled,
-  validateMockResponseRenderToHaveBeenCalled,
+  validateMockValueToHaveBeenCalled,
 } = require('../../../../utils/test-utils/validators.utils');
 const {
   mockRequest,
@@ -20,7 +19,7 @@ describe('renderIndexView Test Suite', () => {
     renderIndexViewController(req, res);
     const { status, render } = res;
 
-    validateMockResponseStatusToHaveBeenCalled(status);
-    validateMockResponseRenderToHaveBeenCalled(render);
+    validateMockValueToHaveBeenCalled(status);
+    validateMockValueToHaveBeenCalled(render);
   });
 });

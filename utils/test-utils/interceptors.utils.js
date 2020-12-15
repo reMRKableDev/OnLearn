@@ -3,6 +3,7 @@ module.exports = {
     const req = {};
     req.body = jest.fn().mockReturnValue(req);
     req.params = jest.fn().mockReturnValue(req);
+    req.login = jest.fn().mockReturnValue(req);
     return req;
   },
 

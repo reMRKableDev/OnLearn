@@ -1,7 +1,6 @@
 const { renderRegistrationFormWithErrorsHelper } = require('../index');
 const {
-  validateMockResponseStatusToHaveBeenCalled,
-  validateMockResponseRenderToHaveBeenCalled,
+  validateMockValueToHaveBeenCalled,
 } = require('../../../../utils/test-utils/validators.utils');
 
 const {
@@ -9,7 +8,7 @@ const {
   mockErrorRequest,
 } = require('../../../../utils/test-utils/interceptors.utils');
 
-describe('renderIndexView Test Suite', () => {
+describe('renderRegistrationForm Test Suite', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
@@ -23,7 +22,7 @@ describe('renderIndexView Test Suite', () => {
     renderRegistrationFormWithErrorsHelper(res, req, dummyError);
     const { status, render } = res;
 
-    validateMockResponseStatusToHaveBeenCalled(status);
-    validateMockResponseRenderToHaveBeenCalled(render);
+    validateMockValueToHaveBeenCalled(status);
+    validateMockValueToHaveBeenCalled(render);
   });
 });

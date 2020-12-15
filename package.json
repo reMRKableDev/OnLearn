@@ -16,6 +16,7 @@
       "*.js",
       "configs/*.js",
       "api/**/*.js",
+      "database/**/*.js",
       "utils/global-utils/**/*.js",
       "loaders/*",
       "!prettier.config.js"

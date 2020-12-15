@@ -23,21 +23,6 @@ exports.validateArrayContaining = (received, expected) => {
   expect(received).toEqual(expect.arrayContaining(expected));
 };
 
-exports.validateMockResponseStatusToHaveBeenCalled = (mockStatus) => {
-  expect(mockStatus).not.toHaveBeenCalledTimes(100);
-  expect(mockStatus).toHaveBeenCalled();
-};
-
-exports.validateMockResponseRenderToHaveBeenCalled = (mockRender) => {
-  expect(mockRender).not.toHaveBeenCalledTimes(100);
-  expect(mockRender).toHaveBeenCalled();
-};
-
-exports.validateMockResponseSendToHaveBeenCalled = (mockSend) => {
-  expect(mockSend).not.toHaveBeenCalledTimes(100);
-  expect(mockSend).toHaveBeenCalled();
-};
-
 exports.validateMockValueToHaveBeenCalled = (mockValue) => {
   expect(mockValue).not.toHaveBeenCalledTimes(100);
   expect(mockValue).toHaveBeenCalled();
