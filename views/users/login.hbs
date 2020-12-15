@@ -1,0 +1,40 @@
+<section>
+    <div>
+        {{#if errors}}
+        <ul>
+            {{#each errors}}
+            <li>
+                <div>
+                    {{msg}}
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </div>
+    <div>
+        {{#if message}}
+        <p> {{message}} </p>
+        {{/if}}
+    </div>
+    <div>
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            <div>
+                <label for="user">Username/Email</label>
+                {{#if username}}
+                <input type="text" name="user" value="{{username}}">
+                {{else}}
+                <input type="text" name="user" value="{{email}}">
+                {{/if}}
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" value="{{password}}">
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <br />
+        <p>Don't have an account? <a href="/register">Register</a></p>
+    </div>
+</section>
