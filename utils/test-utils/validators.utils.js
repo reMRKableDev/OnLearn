@@ -38,6 +38,11 @@ exports.validateMockResponseSendToHaveBeenCalled = (mockSend) => {
   expect(mockSend).toHaveBeenCalled();
 };
 
+exports.validateMockValueToHaveBeenCalled = (mockValue) => {
+  expect(mockValue).not.toHaveBeenCalledTimes(100);
+  expect(mockValue).toHaveBeenCalled();
+};
+
 exports.validateControllerUsed = (received, controller) => {
   expect(received).not.toBe(() => 'dummy');
   expect(received).toBe(controller);
