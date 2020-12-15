@@ -1,5 +1,5 @@
 const Class = require('../class.model');
-const { fakeClassDataNoLessons } = require('../fixtures');
+const { fakeClassDataNoLessons } = require('../../fixtures');
 const {
   validateNotEmpty,
 } = require('../../../utils/test-utils/validators.utils');
