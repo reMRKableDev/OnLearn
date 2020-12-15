@@ -78,3 +78,8 @@ exports.validateTypeOfFunction = (received) => {
   expect(typeof received).not.toBe('number');
   expect(typeof received).toBe('function');
 };
+
+exports.validateTypeOfString = (received) => {
+  expect(typeof received).not.toBe('number');
+  expect(typeof received).toBe('string');
+};
