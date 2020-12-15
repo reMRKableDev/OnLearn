@@ -15,6 +15,7 @@
     "collectCoverageFrom": [
       "*.js",
       "configs/*.js",
+      "api/**/*.js",
       "utils/global-utils/**/*.js",
       "loaders/*",
       "!prettier.config.js"
