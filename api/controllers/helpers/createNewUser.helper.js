@@ -1,4 +1,7 @@
 const { handleIfAsyncErrorHelper } = require('./handleIfAsyncError.helper');
+const {
+  setUserInSessionAndLoginHelper,
+} = require('./setUserInSessionAndLogin.helper');
 const { isString } = require('../../../utils/global-utils');
 const {
   createNewUserService,
@@ -16,15 +19,5 @@ exports.createNewUserHelper = async (request, response) => {
     return;
   }
 
-  request.login(isHandledResults, (err) => {
-    if (err) {
-      response
-        .status(500)
-        .render('users/register', { message: 'Login after signup went bad.' });
-      return;
-    }
-
-    request.flash('success_msg', 'New User Added');
-    response.redirect(`/profile/${request.user.username}`);
-  });
+  setUserInSessionAndLoginHelper(request, isHandledResults, response);
 };
