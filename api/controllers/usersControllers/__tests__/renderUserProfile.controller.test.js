@@ -1,4 +1,4 @@
-const { renderRegisterController } = require('../index');
+const { renderUserProfileController } = require('../index');
 const {
   validateMockValueToHaveBeenCalled,
 } = require('../../../../utils/test-utils/validators.utils');
@@ -16,7 +16,7 @@ describe('renderRegisterController Test Suite', () => {
     const req = mockRequest();
     const res = mockResponse();
 
-    renderRegisterController(req, res);
+    renderUserProfileController(req, res);
     const { status, render } = res;
 
     validateMockValueToHaveBeenCalled(status);

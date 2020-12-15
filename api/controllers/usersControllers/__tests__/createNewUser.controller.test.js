@@ -1,6 +1,6 @@
 const { createNewUserController } = require('../index');
 const {
-  validateMockResponseRenderToHaveBeenCalled,
+  validateMockValueToHaveBeenCalled,
 } = require('../../../../utils/test-utils/validators.utils');
 const {
   mockRequest,
@@ -19,6 +19,6 @@ describe('createNewUserController Test Suite', () => {
     await createNewUserController(req, res);
     const { render } = res;
 
-    validateMockResponseRenderToHaveBeenCalled(render);
+    validateMockValueToHaveBeenCalled(render);
   });
 });

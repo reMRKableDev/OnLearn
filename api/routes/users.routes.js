@@ -1,10 +1,9 @@
 const { Router } = require('express');
 const { profilePrefix } = require('../../configs');
+const { renderUserProfileController } = require('../controllers');
 
 const router = Router();
 
-router.get(profilePrefix, (req, res) =>
-  res.status(200).render('users/profile', req.user)
-);
+router.get(profilePrefix, renderUserProfileController);
 
 module.exports = router;
