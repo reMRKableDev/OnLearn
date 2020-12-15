@@ -1,5 +1,5 @@
 const User = require('../user.model');
-const { fakeUserData, fakeUserDataEmptyFields } = require('../fixtures');
+const { fakeUserData, fakeUserDataEmptyFields } = require('../../fixtures');
 const {
   validateNotEmpty,
   validateObjectMatch,
