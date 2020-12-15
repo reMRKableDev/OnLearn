@@ -1,24 +1,41 @@
-const { fakeUserData } = require('../../../models/fixtures');
+const { fakeUserData } = require('../../../../fixtures');
 const { createNewUserService } = require('../index');
 const {
   dbConnect,
   dbDisconnect,
-} = require('../../../../utils/test-utils/dbHandler.utils');
+} = require('../../../../../utils/test-utils/dbHandler.utils');
 const {
   validateNotEmpty,
-  validateObjectMatch,
-} = require('../../../../utils/test-utils/validators.utils');
+  validateStringEquality,
+} = require('../../../../../utils/test-utils/validators.utils');
 
 beforeAll(async () => dbConnect());
 afterAll(async () => dbDisconnect());
 
-describe('Create New User Instance Test Suite', () => {
+describe('Create New User Test Suite', () => {
   test('should validate new user created from incoming data', async () => {
-    expect.assertions(5);
-
     const newUser = await createNewUserService(fakeUserData);
 
     validateNotEmpty(newUser);
-    validateObjectMatch(newUser, fakeUserData);
+
+    const { role, email, firstName, lastName, password, username } = newUser;
+
+    validateNotEmpty(role);
+    validateStringEquality(role, fakeUserData.role);
+
+    validateNotEmpty(email);
+    validateStringEquality(email, fakeUserData.email);
+
+    validateNotEmpty(firstName);
+    validateStringEquality(firstName, fakeUserData.firstName);
+
+    validateNotEmpty(lastName);
+    validateStringEquality(lastName, fakeUserData.lastName);
+
+    validateNotEmpty(password);
+    validateStringEquality(password, expect.anything());
+
+    validateNotEmpty(username);
+    validateStringEquality(username, fakeUserData.username);
   });
 });
