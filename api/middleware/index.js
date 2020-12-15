@@ -1,6 +1,11 @@
+const { isLoggedInUser } = require('./isLoggedInUser.middleware');
+const { ensureAsyncRoutes } = require('./ensureAsyncRoute.middleware');
 const {
   validateRegistrationForm,
 } = require('./validateRegistrationForm.middleware');
-const { ensureAsyncRoutes } = require('./ensureAsyncRoute.middleware');
 
-module.exports = { validateRegistrationForm, ensureAsyncRoutes };
+module.exports = {
+  isLoggedInUser,
+  ensureAsyncRoutes,
+  validateRegistrationForm,
+};
