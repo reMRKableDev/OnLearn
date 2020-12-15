@@ -7,7 +7,7 @@ const {
   mockResponse,
 } = require('../../../../utils/test-utils/interceptors.utils');
 
-describe('renderRegisterController Test Suite', () => {
+describe('renderUserProfileController Test Suite', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
