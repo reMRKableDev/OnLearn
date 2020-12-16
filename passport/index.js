@@ -1,5 +1,6 @@
 const passport = require('passport');
 const User = require('../database/models/user.model');
+const { handleAsyncFunction } = require('../utils/global-utils');
 
 passport.serializeUser((loggedInUser, done) => {
   const { _id } = loggedInUser;
@@ -7,13 +8,10 @@ passport.serializeUser((loggedInUser, done) => {
   done(null, _id);
 });
 
-passport.deserializeUser((userIdFromSession, done) => {
-  User.findById(userIdFromSession, (err, userDocument) => {
-    if (err) {
-      done(err);
-      return;
-    }
+passport.deserializeUser(async (userIdFromSession, done) => {
+  const [results, error] = await handleAsyncFunction(
+    User.findById(userIdFromSession)
+  );
 
-    done(null, userDocument);
-  });
+  return error ? done(error) : done(null, results);
 });
