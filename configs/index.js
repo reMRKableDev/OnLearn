@@ -8,7 +8,7 @@ module.exports = {
   registerPrefix: '/register',
   loginPrefix: '/login',
   logoutPrefix: '/logout',
-  profilePrefix: '/profile/:username',
+  profilePrefix: '/profile',
 
   /* Database  */
   localMongoUri: LOCAL_MONGO_URI,

@@ -12,6 +12,6 @@ exports.setUserInSessionAndLoginHelper = (
     }
 
     request.flash('success_msg', 'New User Added');
-    response.redirect(`/profile/${request.user.username}`);
+    response.redirect('/profile');
   });
 };

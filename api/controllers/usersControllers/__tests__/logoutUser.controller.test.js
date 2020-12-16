@@ -15,13 +15,10 @@ describe('logoutUser Controller Test Suite', () => {
   test('should validate logout path', () => {
     const req = mockRequest();
     const res = mockResponse();
-
-    const { redirect } = res;
     const { logout } = req;
 
     logoutUserController(req, res);
 
     validateMockValueToHaveBeenCalled(logout);
-    validateMockValueToHaveBeenCalled(redirect);
   });
 });

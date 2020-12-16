@@ -1,8 +1,9 @@
 const passport = require('passport');
 
-exports.authenticateUserHelper = (req, res, next) =>
+exports.authenticateUserHelper = (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/profile/:username',
+    successRedirect: '/profile',
     failureRedirect: '/login',
     failureFlash: true,
   })(req, res, next);
+};

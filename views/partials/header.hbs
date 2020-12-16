@@ -1,6 +1,14 @@
 <nav>
     <ul>
+        {{#if username}}
+        <li>
+            <form action="/logout" method="post">
+                <button type="submit">Logout</button>
+            </form>
+        </li>
+        {{else}}
         <li><a href="/register">Register</a></li>
         <li><a href="/login">Login</a></li>
+        {{/if}}
     </ul>
 </nav>

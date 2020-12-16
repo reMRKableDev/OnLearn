@@ -1,4 +1,6 @@
 exports.logoutUserController = (req, res) => {
   req.logout();
-  res.redirect('/');
+  req.session.destroy(() => {
+    res.status(200).redirect('/');
+  });
 };
