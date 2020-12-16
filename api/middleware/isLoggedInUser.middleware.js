@@ -1,2 +1,2 @@
 exports.isLoggedInUser = (req, res, next) =>
-  req.user ? next() : res.redirect('/');
+  req.isAuthenticated() ? next() : res.status(200).redirect('/');

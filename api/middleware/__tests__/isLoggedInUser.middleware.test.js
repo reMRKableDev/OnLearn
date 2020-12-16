@@ -23,16 +23,19 @@ describe('isLoggedInUser Test Suite', () => {
   });
 
   test('should validate next being called', () => {
-    req.user = 'some user';
+    req.isAuthenticated = () => true;
 
     isLoggedInUser(req, res, next);
     validateMockValueToHaveBeenCalled(next);
   });
 
   test('should validate redirect is being called', () => {
-    const { redirect } = res;
+    req.isAuthenticated = () => false;
+
+    const { redirect, status } = res;
 
     isLoggedInUser(req, res, next);
+    validateMockValueToHaveBeenCalled(status);
     validateMockValueToHaveBeenCalled(redirect);
   });
 });
