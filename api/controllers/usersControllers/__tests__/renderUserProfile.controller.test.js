@@ -16,6 +16,7 @@ describe('renderUserProfileController Test Suite', () => {
     const req = mockRequest();
     const res = mockResponse();
     req.user = jest.fn();
+    req.user.local = jest.fn();
 
     renderUserProfileController(req, res);
     const { status, render } = res;

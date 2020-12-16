@@ -13,11 +13,13 @@ exports.createNewUserService = async (requestBody) => {
   const [results, error] = await handleAsyncFunction(
     User.create({
       role,
-      email,
-      username,
-      lastName,
-      firstName,
-      password: isHashedPassword,
+      local: {
+        email,
+        username,
+        lastName,
+        firstName,
+        password: isHashedPassword,
+      },
     })
   );
 

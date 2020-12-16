@@ -53,6 +53,8 @@ exports.validateMongoValidatorError = (name, message) => {
     'Username is required.',
     'Email is required.',
     'Password is required.',
+    'First name is required.',
+    'Last name is required.',
   ];
 
   expect(expectedMessages).not.toContain('bla bla bla');

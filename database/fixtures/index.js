@@ -26,6 +26,8 @@ exports.fakeUserData = {
 };
 
 exports.fakeUserDataEmptyFields = {
+  firstName: '',
+  lastName: '',
   username: '',
   email: '',
   password: '',

@@ -18,7 +18,8 @@ describe('Create New User Test Suite', () => {
 
     validateNotEmpty(newUser);
 
-    const { role, email, firstName, lastName, password, username } = newUser;
+    const { role, local } = newUser;
+    const { email, firstName, lastName, password, username } = local;
 
     validateNotEmpty(role);
     validateStringEquality(role, fakeUserData.role);
