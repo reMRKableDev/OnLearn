@@ -22,10 +22,10 @@
         <form action="/login" method="post">
             <div>
                 <label for="user">Username/Email</label>
-                {{#if username}}
-                <input type="text" name="user" value="{{username}}">
+                {{#if user}}
+                <input type="text" name="user" value="{{user}}">
                 {{else}}
-                <input type="text" name="user" value="{{email}}">
+                <input type="text" name="user" value="{{user}}">
                 {{/if}}
             </div>
             <div>

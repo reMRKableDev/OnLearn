@@ -4,8 +4,8 @@ const { handleAsyncFunction } = require('../utils/global-utils');
 const { comparePasswordHelper } = require('./helpers');
 
 exports.localStrategy = new LocalStrategy(
-  { usernameField: 'user', passwordField: 'password' },
-  async (user, password, done) => {
+  { usernameField: 'user', passwordField: 'password', passReqToCallback: true },
+  async (req, user, password, done) => {
     const [userResults, error] = await handleAsyncFunction(
       User.findOne({ username: user })
     );
@@ -15,13 +15,17 @@ exports.localStrategy = new LocalStrategy(
     }
 
     if (!userResults) {
-      return done(null, false, { message: 'Incorrect username / email.' });
+      return done(
+        null,
+        false,
+        req.flash('message', 'Incorrect username / email.')
+      );
     }
 
     const isMatch = await comparePasswordHelper(password, userResults.password);
 
     if (!isMatch) {
-      return done(null, false, { message: 'Incorrect password.' });
+      return done(null, false, req.flash('message', 'Incorrect password.'));
     }
 
     return done(null, userResults);
