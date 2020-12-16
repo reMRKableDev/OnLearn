@@ -2,6 +2,7 @@ const { Router } = require('express');
 const { registerPrefix, loginPrefix } = require('../../configs');
 const { validateRegistrationForm } = require('../middleware');
 const {
+  renderLoginController,
   createNewUserController,
   renderRegisterController,
 } = require('../controllers');
@@ -14,6 +15,6 @@ router.post(
   validateRegistrationForm(),
   createNewUserController
 );
-router.get(loginPrefix, (req, res) => res.render('users/login'));
+router.get(loginPrefix, renderLoginController);
 
 module.exports = router;
