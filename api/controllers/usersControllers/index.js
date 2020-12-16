@@ -4,10 +4,12 @@ const { registerNewUserController } = require('./registerNewUser.controller');
 const {
   renderUserProfileController,
 } = require('./renderUserProfile.controller');
+const { loginUserController } = require('./loginUser.controller');
 
 module.exports = {
+  loginUserController,
   renderLoginController,
-  registerNewUserController,
   renderRegisterController,
+  registerNewUserController,
   renderUserProfileController,
 };

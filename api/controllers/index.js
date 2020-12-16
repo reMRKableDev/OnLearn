@@ -1,5 +1,6 @@
 const { renderIndexViewController } = require('./indexControllers');
 const {
+  loginUserController,
   renderLoginController,
   renderRegisterController,
   registerNewUserController,
@@ -7,9 +8,10 @@ const {
 } = require('./usersControllers');
 
 module.exports = {
+  loginUserController,
   renderLoginController,
-  renderIndexViewController,
   renderRegisterController,
+  renderIndexViewController,
   registerNewUserController,
   renderUserProfileController,
 };
