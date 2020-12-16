@@ -16,6 +16,12 @@ let req;
 let res;
 let next;
 
+const loginFormTestHelper = (body, request, response, done, validation) => {
+  request.body = body;
+  loginUserController(request, response, done);
+  validateMockValueToHaveBeenCalled(validation);
+};
+
 describe('loginUser Controller Test Suite', () => {
   beforeEach(() => {
     req = mockRequest();
@@ -28,34 +34,42 @@ describe('loginUser Controller Test Suite', () => {
   });
 
   test('should validate login form with errors when req.body is empty', () => {
-    req.body = { user: '', password: '' };
-
-    loginUserController(req, res, next);
-
-    validateMockValueToHaveBeenCalled(renderLoginFormWithErrorsHelper);
+    loginFormTestHelper(
+      { user: '', password: '' },
+      req,
+      res,
+      next,
+      renderLoginFormWithErrorsHelper
+    );
   });
 
   test('should validate login form with errors when req.body.password is empty', () => {
-    req.body = { user: 'dummy', password: '' };
-
-    loginUserController(req, res, next);
-
-    validateMockValueToHaveBeenCalled(renderLoginFormWithErrorsHelper);
+    loginFormTestHelper(
+      { user: 'dummy', password: '' },
+      req,
+      res,
+      next,
+      renderLoginFormWithErrorsHelper
+    );
   });
 
   test('should validate login form with errors when req.body.user is empty', () => {
-    req.body = { user: '', password: '*****' };
-
-    loginUserController(req, res, next);
-
-    validateMockValueToHaveBeenCalled(renderLoginFormWithErrorsHelper);
+    loginFormTestHelper(
+      { user: '', password: '*****' },
+      req,
+      res,
+      next,
+      renderLoginFormWithErrorsHelper
+    );
   });
 
   test('should validate user authentication', () => {
-    req.body = { user: 'dummy', password: '*****' };
-
-    loginUserController(req, res, next);
-
-    validateMockValueToHaveBeenCalled(authenticateUserHelper);
+    loginFormTestHelper(
+      { user: 'dummy', password: '*****' },
+      req,
+      res,
+      next,
+      authenticateUserHelper
+    );
   });
 });
