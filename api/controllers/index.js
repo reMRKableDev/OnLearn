@@ -2,7 +2,7 @@ const { renderIndexViewController } = require('./indexControllers');
 const {
   renderLoginController,
   renderRegisterController,
-  createNewUserController,
+  registerNewUserController,
   renderUserProfileController,
 } = require('./usersControllers');
 
@@ -10,6 +10,6 @@ module.exports = {
   renderLoginController,
   renderIndexViewController,
   renderRegisterController,
-  createNewUserController,
+  registerNewUserController,
   renderUserProfileController,
 };

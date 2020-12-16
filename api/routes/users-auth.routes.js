@@ -3,7 +3,7 @@ const { registerPrefix, loginPrefix } = require('../../configs');
 const { validateRegistrationForm } = require('../middleware');
 const {
   renderLoginController,
-  createNewUserController,
+  registerNewUserController,
   renderRegisterController,
 } = require('../controllers');
 
@@ -13,7 +13,7 @@ router.get(registerPrefix, renderRegisterController);
 router.post(
   registerPrefix,
   validateRegistrationForm(),
-  createNewUserController
+  registerNewUserController
 );
 router.get(loginPrefix, renderLoginController);
 
