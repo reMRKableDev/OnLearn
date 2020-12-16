@@ -1,8 +1,9 @@
 const { Router } = require('express');
-const { registerPrefix, loginPrefix } = require('../../configs');
+const { registerPrefix, loginPrefix, logoutPrefix } = require('../../configs');
 const { validateRegistrationForm } = require('../middleware');
 const {
   loginUserController,
+  logoutUserController,
   renderLoginController,
   registerNewUserController,
   renderRegisterController,
@@ -18,5 +19,6 @@ router.post(
 );
 router.get(loginPrefix, renderLoginController);
 router.post(loginPrefix, loginUserController);
+router.post(logoutPrefix, logoutUserController);
 
 module.exports = router;

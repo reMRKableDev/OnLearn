@@ -15,6 +15,7 @@ describe('renderUserProfileController Test Suite', () => {
   test('should validate res.status & res.render is called', () => {
     const req = mockRequest();
     const res = mockResponse();
+    req.user = jest.fn();
 
     renderUserProfileController(req, res);
     const { status, render } = res;

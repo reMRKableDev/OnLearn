@@ -1,5 +1,6 @@
 const { renderRegisterController } = require('./renderRegister.controller');
 const { renderLoginController } = require('./renderLogin.controller');
+const { logoutUserController } = require('./logoutUser.controller');
 const { registerNewUserController } = require('./registerNewUser.controller');
 const {
   renderUserProfileController,
@@ -8,6 +9,7 @@ const { loginUserController } = require('./loginUser.controller');
 
 module.exports = {
   loginUserController,
+  logoutUserController,
   renderLoginController,
   renderRegisterController,
   registerNewUserController,
