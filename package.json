@@ -1,5 +1,6 @@
 {
   "name": "node-onlearn",
+  "author": "Malcolm R. Kente (reMRKable Dev)",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -45,7 +46,8 @@
     "mongodb-memory-server": "6.9.2",
     "mongoose": "5.11.8",
     "morgan": "1.10.0",
-    "passport": "0.4.1"
+    "passport": "0.4.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "1.2.3",

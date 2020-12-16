@@ -7,7 +7,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const { sessSecret } = require('../configs');
-require('../passport');
+const { localStrategy } = require('../passport/strategy');
 
 const app = express();
 app.disable('x-powered-by');
@@ -35,6 +35,8 @@ app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
+passport.use(localStrategy);
+require('../passport/serializeSession');
 
 // Global Variables - messages for the view
 app.use((req, res, next) => {
