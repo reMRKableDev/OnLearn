@@ -5,9 +5,11 @@ const {
 const {
   renderRegistrationFormWithErrorsHelper,
 } = require('./renderRegistrationFormWithErrors.helper');
+const { authenticateUserHelper } = require('./authenticateUser.helper');
 
 module.exports = {
   createNewUserHelper,
+  authenticateUserHelper,
   renderLoginFormWithErrorsHelper,
   renderRegistrationFormWithErrorsHelper,
 };
