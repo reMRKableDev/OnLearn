@@ -4,6 +4,7 @@ module.exports = {
     req.body = jest.fn().mockReturnValue(req);
     req.params = jest.fn().mockReturnValue(req);
     req.login = jest.fn().mockReturnValue(req);
+    req.flash = jest.fn().mockReturnValue(req);
     return req;
   },
 

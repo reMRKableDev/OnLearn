@@ -1,5 +1,4 @@
 const passport = require('passport');
-const { validationResult } = require('express-validator');
 const { renderLoginFormWithErrorsHelper } = require('../helpers');
 
 exports.loginUserController = (req, res, next) => {

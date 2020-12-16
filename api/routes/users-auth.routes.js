@@ -1,9 +1,6 @@
 const { Router } = require('express');
 const { registerPrefix, loginPrefix } = require('../../configs');
-const {
-  validateLoginForm,
-  validateRegistrationForm,
-} = require('../middleware');
+const { validateRegistrationForm } = require('../middleware');
 const {
   loginUserController,
   renderLoginController,
