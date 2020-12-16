@@ -9,7 +9,7 @@ exports.validateUndefined = (received) => {
 };
 
 exports.validateStringEquality = (received, expected) => {
-  expect(received).not.toEqual('dummy');
+  expect(received).not.toEqual('dummydfasfsdfsdfasdsd');
   expect(received).toEqual(expected);
 };
 
