@@ -13,7 +13,6 @@ exports.googleAuthStrategy = new GoogleStrategy(
   async (req, accessToken, refreshToken, profile, done) => {
     // Check if user is logged in
     if (!req.user) {
-      // TODO: MAKE into a service
       const [userResults, error] = await handleAsyncFunction(
         User.findOne({ 'google.id': profile.id })
       );
@@ -46,6 +45,12 @@ exports.googleAuthStrategy = new GoogleStrategy(
       // TODO: MAKE into a service
       const [newGoogleUser, googleError] = await handleAsyncFunction(
         User.create({
+          local: {
+            email: profile.emails[0].value.toLocaleLowerCase(),
+            username: profile.displayName,
+            firstName: profile.name.givenName,
+            lastName: profile.name.familyName,
+          },
           google: {
             id: profile.id,
             token: accessToken,
@@ -61,6 +66,7 @@ exports.googleAuthStrategy = new GoogleStrategy(
 
       return done(null, newGoogleUser);
     }
+
     // user already exists and is logged in, we have to link accounts
     const { user } = req;
 

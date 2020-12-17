@@ -1,12 +1,20 @@
 const { Router } = require('express');
-const { registerPrefix, loginPrefix, logoutPrefix } = require('../../configs');
 const { validateRegistrationForm } = require('../middleware');
+const {
+  registerPrefix,
+  loginPrefix,
+  logoutPrefix,
+  googleAuthPrefix,
+  googleAuthCallbackPrefix,
+} = require('../../configs');
 const {
   loginUserController,
   logoutUserController,
   renderLoginController,
-  registerNewUserController,
   renderRegisterController,
+  registerNewUserController,
+  authenticateGoogleLoginController,
+  authenticateGoogleCallbackController,
 } = require('../controllers');
 
 const router = Router();
@@ -20,5 +28,7 @@ router.post(
 router.get(loginPrefix, renderLoginController);
 router.post(loginPrefix, loginUserController);
 router.post(logoutPrefix, logoutUserController);
+router.get(googleAuthPrefix, authenticateGoogleLoginController);
+router.get(googleAuthCallbackPrefix, authenticateGoogleCallbackController);
 
 module.exports = router;

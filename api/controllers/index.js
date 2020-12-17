@@ -6,6 +6,8 @@ const {
   renderRegisterController,
   registerNewUserController,
   renderUserProfileController,
+  authenticateGoogleLoginController,
+  authenticateGoogleCallbackController,
 } = require('./usersControllers');
 
 module.exports = {
@@ -16,4 +18,6 @@ module.exports = {
   renderIndexViewController,
   registerNewUserController,
   renderUserProfileController,
+  authenticateGoogleLoginController,
+  authenticateGoogleCallbackController,
 };

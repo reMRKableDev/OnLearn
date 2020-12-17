@@ -29,6 +29,6 @@ module.exports = {
   googleAuth: {
     clientId: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackUrl: '/auth/google/redirect',
+    callbackUrl: '/auth/google/callback',
   },
 };
