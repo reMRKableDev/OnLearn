@@ -8,6 +8,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const { sessSecret } = require('../configs');
 const { localStrategy } = require('../passport/localStrategy');
+const { googleAuthStrategy } = require('../passport/googleStrategy');
 
 const app = express();
 app.disable('x-powered-by');
@@ -36,6 +37,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(localStrategy);
+passport.use(googleAuthStrategy);
 require('../passport/serializeSession');
 
 // Global Variables - messages for the view
