@@ -1,6 +1,12 @@
 require('dotenv').config();
 
-const { LOCAL_MONGO_URI, SESSION_SECRET, DUMMY_PASSWORD } = process.env;
+const {
+  LOCAL_MONGO_URI,
+  SESSION_SECRET,
+  DUMMY_PASSWORD,
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET,
+} = process.env;
 
 module.exports = {
   /* Route prefixes */
@@ -16,4 +22,11 @@ module.exports = {
 
   /* Test Fixture Data */
   dummyPassword: DUMMY_PASSWORD,
+
+  /* Google Authentication */
+  googleAuth: {
+    clientId: GOOGLE_CLIENT_ID,
+    clientSecret: GOOGLE_CLIENT_SECRET,
+    callbackUrl: '/auth/google/redirect',
+  },
 };
