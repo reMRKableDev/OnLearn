@@ -7,7 +7,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const { sessSecret } = require('../configs');
-const { localStrategy } = require('../passport/strategy');
+const { localStrategy } = require('../passport/localStrategy');
 
 const app = express();
 app.disable('x-powered-by');
