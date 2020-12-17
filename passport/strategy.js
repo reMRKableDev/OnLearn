@@ -7,7 +7,7 @@ exports.localStrategy = new LocalStrategy(
   { usernameField: 'user', passwordField: 'password', passReqToCallback: true },
   async (req, user, password, done) => {
     const [userResults, error] = await handleAsyncFunction(
-      User.findOne({ username: user })
+      User.findOne({ 'local.username': user })
     );
 
     if (error) {
