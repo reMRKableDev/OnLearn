@@ -19,6 +19,7 @@ const {
 
 let validUser;
 let validCourse;
+
 describe('Course Model Test Suite', () => {
   beforeAll(async () => {
     await dbConnect();
@@ -105,6 +106,10 @@ describe('Course Model Test Suite', () => {
     validateStringEquality(videoUrl2, unitTwo.videoUrl);
   });
 
+  // TODO: Write test for multiple modules + single unit in each module
+
+  // TODO: Write test for multiple modules + multiple units
+
   test('should validate new Course with multiple instructors + no modules successfully saved', async () => {
     const validUserTwo = await User.create({
       local: fakeUserDataTwo,
@@ -127,4 +132,8 @@ describe('Course Model Test Suite', () => {
     validateArrayContaining(instructors, [userId, userIdTwo]);
     validateArrayLength(modules, 0);
   });
+
+  // TODO: Write test for multiple instructors + single module
+
+  // TODO: Write test for multiple instructors + multiple modules
 });
