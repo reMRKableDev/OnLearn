@@ -2,7 +2,7 @@ exports.setUserInSessionAndLoginHelper = (
   request,
   isHandledResults,
   response
-) => {
+) =>
   request.login(isHandledResults, (err) => {
     if (err) {
       response
@@ -14,4 +14,3 @@ exports.setUserInSessionAndLoginHelper = (
     request.flash('success_msg', 'New User Added');
     response.redirect('/profile');
   });
-};

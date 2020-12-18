@@ -1,3 +1,5 @@
+jest.mock('express-validator');
+const { validationResult } = require('express-validator');
 const { registerNewUserController } = require('../index');
 const {
   validateMockValueToHaveBeenCalled,
@@ -7,18 +9,23 @@ const {
   mockResponse,
 } = require('../../../../utils/test-utils/interceptors.utils');
 
-describe('createNewUserController Test Suite', () => {
+describe('registerNewUserController Test Suite', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  test('should validate res.send gets sent', async () => {
+  test('should validate req.login gets called', async () => {
+    validationResult.mockImplementation(() => ({
+      isEmpty: jest.fn().mockReturnValue(false),
+      array: jest
+        .fn()
+        .mockReturnValue([{ test1: 'error1' }, { test2: 'error2' }]),
+    }));
+
     const req = mockRequest();
     const res = mockResponse();
 
     await registerNewUserController(req, res);
-    const { login } = req;
-
-    validateMockValueToHaveBeenCalled(login);
+    validateMockValueToHaveBeenCalled(validationResult);
   });
 });
