@@ -13,6 +13,9 @@ const { googleAuthStrategy } = require('../passport/googleStrategy');
 const app = express();
 app.disable('x-powered-by');
 
+hbs.registerHelper('ifEqualsHelper', (value1, value2, options) =>
+  value1 === value2 ? options.fn(this) : options.inverse(this)
+);
 hbs.registerPartials(path.join(__dirname, '../views/partials'));
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'hbs');
