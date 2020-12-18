@@ -31,7 +31,11 @@ const userSchema = new Schema({
     name: String,
   },
 
-  role: { type: String },
+  role: {
+    type: String,
+    enum: ['student', 'instructor', 'admin'],
+    default: 'student',
+  },
   classes: [{ type: Schema.Types.ObjectId, ref: 'Class' }],
 });
 
