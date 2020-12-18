@@ -3,11 +3,13 @@ const { apiPrefix } = require('../configs');
 const indexRouter = require('../api/routes/index.routes');
 const usersAuthRouter = require('../api/routes/users-auth.routes');
 const usersRouter = require('../api/routes/users.routes');
+const instructorsRouter = require('../api/routes/instructors.routes');
 
 module.exports = (app) => {
   app.use(apiPrefix, indexRouter);
   app.use(apiPrefix, usersRouter);
   app.use(apiPrefix, usersAuthRouter);
+  app.use(apiPrefix, instructorsRouter);
 
   // Catch 404's and forward to error handler below
   app.use((req, res, next) => {

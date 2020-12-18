@@ -7,7 +7,7 @@ module.exports = async () => {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,
-      useFindAndModify: true,
+      useFindAndModify: false,
     });
     console.log(
       `Connected to Mongo! Database name: "${db.connections[0].name}"`
