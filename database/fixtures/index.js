@@ -17,14 +17,6 @@ exports.fakeModuleData = {
   ],
 };
 
-/* exports.fakeUserDataNoClasses = {
-  firstName: 'Dummy',
-  lastName: 'User',
-  username: 'dummyUser',
-  email: 'dummy@user.com',
-  classes: [],
-}; */
-
 exports.fakeUserData = {
   firstName: 'Dummy',
   lastName: 'User',
