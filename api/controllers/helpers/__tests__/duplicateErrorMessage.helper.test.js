@@ -3,7 +3,7 @@ const {
 } = require('../duplicateErrorMessage.helper');
 const {
   validateNotEmpty,
-  validateTypeOfString,
+  validateTypeOf,
 } = require('../../../../utils/test-utils/validators.utils');
 
 describe('duplicateErrorMessage Test Suite', () => {
@@ -11,6 +11,6 @@ describe('duplicateErrorMessage Test Suite', () => {
     const results = duplicateErrorMessageHelper('dummy');
 
     validateNotEmpty(results);
-    validateTypeOfString(results);
+    validateTypeOf(results, 'string');
   });
 });

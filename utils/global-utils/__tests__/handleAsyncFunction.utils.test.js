@@ -2,7 +2,7 @@ const { handleAsyncFunction } = require('../index');
 const {
   validateNotEmpty,
   validateUndefined,
-  validateTypeOfFunction,
+  validateTypeOf,
 } = require('../../test-utils/validators.utils');
 
 const doSomethingAsync = (promiseState) =>
@@ -14,7 +14,7 @@ const doSomethingAsync = (promiseState) =>
 
 describe('Handle Async Functions Test Suite', () => {
   test('should validate handleAsyncFunction as typeof function', () => {
-    validateTypeOfFunction(handleAsyncFunction);
+    validateTypeOf(handleAsyncFunction, 'function');
   });
 
   test('should validate handleAsyncFunction returns error', async () => {

@@ -1,9 +1,8 @@
 const User = require('../user.model');
-const { fakeUserData, fakeUserDataEmptyFields } = require('../../fixtures');
+const { fakeUserData } = require('../../fixtures');
 const {
   validateNotEmpty,
   validateStringEquality,
-  validateMongoValidatorError,
   validateMongoDuplicationError,
 } = require('../../../utils/test-utils/validators.utils');
 const {
@@ -55,40 +54,6 @@ describe('User Model Test Suite', () => {
     } catch (error) {
       const { name, code } = error;
       validateMongoDuplicationError(name, code);
-    }
-  });
-
-  test('should validate Validator Error for empty fields', async () => {
-    const validStudentUser = new User({
-      local: fakeUserDataEmptyFields,
-      role: fakeUserDataEmptyFields.role,
-    });
-
-    try {
-      await validStudentUser.save();
-    } catch (error) {
-      const {
-        'local.username': username,
-        'local.email': email,
-        'local.password': password,
-        'local.firstName': firstName,
-        'local.lastName': lastName,
-      } = error.errors;
-
-      const { name, message } = username;
-      validateMongoValidatorError(name, message);
-
-      const { name: emailName, message: emailMessage } = email;
-      validateMongoValidatorError(emailName, emailMessage);
-
-      const { name: passwordName, message: passwordMessage } = password;
-      validateMongoValidatorError(passwordName, passwordMessage);
-
-      const { name: firstNameValue, message: firstNameMessage } = firstName;
-      validateMongoValidatorError(firstNameValue, firstNameMessage);
-
-      const { name: lastNameValue, message: lastNameMessage } = lastName;
-      validateMongoValidatorError(lastNameValue, lastNameMessage);
     }
   });
 });

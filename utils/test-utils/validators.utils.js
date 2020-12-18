@@ -45,28 +45,7 @@ exports.validateMongoDuplicationError = (name, code) => {
   expect(code).toBe(11000);
 };
 
-exports.validateMongoValidatorError = (name, message) => {
-  expect(name).not.toEqual(/dummy/i);
-  expect(name).toEqual('ValidatorError');
-
-  const expectedMessages = [
-    'Username is required.',
-    'Email is required.',
-    'Password is required.',
-    'First name is required.',
-    'Last name is required.',
-  ];
-
-  expect(expectedMessages).not.toContain('bla bla bla');
-  expect(expectedMessages).toContain(message);
-};
-
-exports.validateTypeOfFunction = (received) => {
+exports.validateTypeOf = (received, expected) => {
   expect(typeof received).not.toBe('number');
-  expect(typeof received).toBe('function');
-};
-
-exports.validateTypeOfString = (received) => {
-  expect(typeof received).not.toBe('number');
-  expect(typeof received).toBe('string');
+  expect(typeof received).toBe(expected);
 };
