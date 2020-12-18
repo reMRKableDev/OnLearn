@@ -28,6 +28,7 @@ jobs:
         echo DUMMY_PASSWORD=${{ secrets.DUMMY_PASSWORD }} >> .env
         echo GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }} >> .env
         echo GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }} >> .env
+        echo SESSION_SECRET=${{ secrets.SESSION_SECRET }} >> .env
 
     - run: npm ci
     - run: npm run build --if-present
