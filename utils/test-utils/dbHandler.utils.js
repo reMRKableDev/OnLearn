@@ -10,7 +10,7 @@ exports.dbConnect = async () => {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
-    useFindAndModify: true,
+    useFindAndModify: false,
   };
 
   await mongoose.connect(uri, mongooseOpts);
