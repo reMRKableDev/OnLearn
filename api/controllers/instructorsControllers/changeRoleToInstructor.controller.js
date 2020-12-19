@@ -1,16 +1,22 @@
-const User = require('../../../database/models/user.model');
+const {
+  updateUserRoleService,
+} = require('../../../database/services/modelServices/userServices');
 
 exports.changeRoleToInstructor = async (req, res) => {
   const { _id: userId } = req.user;
-  const updatedResults = await User.findOneAndUpdate(
-    { _id: userId },
-    {
-      role: 'instructor',
-    },
-    { upsert: true, new: true }
-  );
+  const updatedResults = await updateUserRoleService(userId);
 
-  return updatedResults
-    ? res.redirect('/profile')
-    : res.redirect('/instructor');
+  if (updatedResults instanceof Error) {
+    res.status(500).render('error', {
+      message:
+        'Oops! An unexpected error seems to have occurred while processing your request.',
+      error: {
+        status: '500',
+        stack: `We're sorry for the trouble. We've been notified and will correct this as soon as possible. Please try your request again after a little while`,
+      },
+    });
+    return;
+  }
+
+  res.redirect('/profile');
 };
