@@ -40,4 +40,10 @@ describe('Cloudinary uploader Test Suite', () => {
     );
     validateEquality(params.use_filename, expectedParams.use_filename);
   });
+
+  test('should validate fileUploader limits.fileSize to be 8MB', () => {
+    const { limits } = fileUploader;
+
+    validateEquality(limits.fileSize, 8000000);
+  });
 });
