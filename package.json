@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "bcrypt": "5.0.0",
+    "cloudinary": "^1.23.0",
     "connect-flash": "0.1.1",
     "connect-mongo": "3.2.0",
     "cookie-parser": "1.4.5",
@@ -46,6 +47,8 @@
     "mongodb-memory-server": "6.9.2",
     "mongoose": "5.11.8",
     "morgan": "1.10.0",
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^4.0.0",
     "passport": "0.4.1",
     "passport-google-oauth": "2.0.0",
     "passport-local": "1.0.0"
