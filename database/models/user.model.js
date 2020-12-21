@@ -30,7 +30,10 @@ const userSchema = new Schema({
     email: String,
     name: String,
   },
-
+  profilePictureUrl: {
+    type: 'String',
+    default: 'https://via.placeholder.com/150',
+  },
   role: {
     type: String,
     enum: ['student', 'instructor', 'admin'],
