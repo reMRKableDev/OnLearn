@@ -29,6 +29,9 @@ jobs:
         echo GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }} >> .env
         echo GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }} >> .env
         echo SESSION_SECRET=${{ secrets.SESSION_SECRET }} >> .env
+        echo CLOUDINARY_KEY=${{ secrets.CLOUDINARY_KEY }} >> .env
+        echo CLOUDINARY_NAME=${{ secrets.CLOUDINARY_NAME }} >> .env
+        echo CLOUDINARY_SECRET=${{ secrets.CLOUDINARY_SECRET }} >> .env
 
     - run: npm ci
     - run: npm run build --if-present
