@@ -27,7 +27,7 @@ exports.googleAuthStrategy = new GoogleStrategy(
           userResults.google.token = accessToken;
           userResults.google.name = profile.displayName;
           userResults.google.email = profile.emails[0].value.toLocaleLowerCase();
-          userResults.profilePictureUrl = profile.photos[0].value.toLocaleLowerCase();
+          userResults.profilePictureUrl = profile.photos[0].value;
 
           const [updatedUserResults, saveError] = await handleAsyncFunction(
             userResults.save()
@@ -58,7 +58,7 @@ exports.googleAuthStrategy = new GoogleStrategy(
             name: profile.displayName,
             email: profile.emails[0].value.toLocaleLowerCase(),
           },
-          profilePictureUrl: profile.photos[0].value.toLocaleLowerCase(),
+          profilePictureUrl: profile.photos[0].value,
         })
       );
 
@@ -76,9 +76,7 @@ exports.googleAuthStrategy = new GoogleStrategy(
     user.google.token = accessToken;
     user.google.name = profile.displayName;
     user.google.email = (profile.emails[0].value || '').toLocaleLowerCase();
-    user.profilePictureUrl = (
-      profile.photos[0].value || ''
-    ).toLocaleLowerCase();
+    user.profilePictureUrl = profile.photos[0].value || '';
 
     const [updatedUser, updateError] = await handleAsyncFunction(user.save());
 
