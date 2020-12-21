@@ -1,2 +1,2 @@
-exports.renderIndexViewController = (_, res) =>
+exports.renderIndexViewController = (_req, res) =>
   res.status(200).render('index', { title: 'Express' });
