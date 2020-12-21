@@ -1,2 +1,2 @@
 exports.renderRegisterController = (_, res) =>
-  res.status(200).render('users/register');
+  res.status(200).render('users/auth/register');

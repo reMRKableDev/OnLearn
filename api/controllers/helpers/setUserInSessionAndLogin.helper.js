@@ -5,9 +5,9 @@ exports.setUserInSessionAndLoginHelper = (
 ) =>
   request.login(isHandledResults, (err) => {
     if (err) {
-      response
-        .status(500)
-        .render('users/register', { message: 'Login after signup went bad.' });
+      response.status(500).render('users/auth/register', {
+        message: 'Login after signup went bad.',
+      });
       return;
     }
 

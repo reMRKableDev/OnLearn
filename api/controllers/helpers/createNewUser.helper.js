@@ -15,7 +15,7 @@ exports.createNewUserHelper = async (request, response) => {
   if (isString(isHandledResults)) {
     response
       .status(409)
-      .render('users/register', { message: isHandledResults });
+      .render('users/auth/register', { message: isHandledResults });
     return;
   }
 
