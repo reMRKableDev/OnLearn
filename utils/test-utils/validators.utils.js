@@ -8,6 +8,11 @@ exports.validateUndefined = (received) => {
   expect(received).toBeUndefined();
 };
 
+exports.validateEquality = (received, expected) => {
+  expect(received).not.toBe('dummydummy');
+  expect(received).toBe(expected);
+};
+
 exports.validateStringEquality = (received, expected) => {
   expect(received).not.toEqual('dummydfasfsdfsdfasdsd');
   expect(received).toEqual(expected);
@@ -48,4 +53,13 @@ exports.validateMongoDuplicationError = (name, code) => {
 exports.validateTypeOf = (received, expected) => {
   expect(typeof received).not.toBe('number');
   expect(typeof received).toBe(expected);
+};
+
+exports.validateInstanceOf = (received, expected) => {
+  function DummyInstance(dummy) {
+    this.dummy = dummy;
+  }
+
+  expect(received instanceof DummyInstance).toBe(false);
+  expect(received instanceof expected).toBe(true);
 };

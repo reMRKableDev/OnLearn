@@ -6,6 +6,9 @@ const {
   DUMMY_PASSWORD,
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
+  CLOUDINARY_KEY,
+  CLOUDINARY_NAME,
+  CLOUDINARY_SECRET,
 } = process.env;
 
 module.exports = {
@@ -32,4 +35,9 @@ module.exports = {
     clientSecret: GOOGLE_CLIENT_SECRET,
     callbackUrl: '/auth/google/callback',
   },
+
+  /* Cloudinary */
+  cloudName: CLOUDINARY_NAME,
+  cloudKey: CLOUDINARY_KEY,
+  cloudSecret: CLOUDINARY_SECRET,
 };
