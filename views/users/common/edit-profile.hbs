@@ -11,25 +11,29 @@
                 <figure>
                     <img src="{{profilePictureUrl}}" alt="profile-avatar">
                 </figure>
+                <p>Change your profile picture</p>
                 <input type="file" name="image" id="image-input" />
                 <input type="text" name="existingImage" hidden id="" value="{{profilePictureUrl}}">
             </div>
+            <br>
             <div>
                 <label for="name">First Name</label>
-                <input type="text" id="first-name" name="firstName" value="{{firstName}}">
+                <input type="text" id="first-name" name="firstName" value="{{local.firstName}}">
             </div>
             <div>
                 <label for="name">Last Name</label>
-                <input type="text" id="last-name" name="lastName" value="{{lastName}}">
+                <input type="text" id="last-name" name="lastName" value="{{local.lastName}}">
             </div>
             <div>
                 <label for="email">E-mail</label>
-                <input type="text" id="email" name="email" value="{{email}}">
+                <input type="text" id="email" name="email" value="{{local.email}}">
             </div>
             <div>
                 <label for="name">Username</label>
-                <input type="text" id="username" name="username" value="{{username}}">
+                <input type="text" id="username" name="username" value="{{local.username}}">
             </div>
+
+            {{#if local.password}}
             <div>
                 <label for="password">New Password</label>
                 <input type="password" id="password" name="password" autocomplete="on" required>
@@ -38,6 +42,8 @@
                 <label for="password2">Confirm New Password</label>
                 <input type="password" id="password2" name="password2" required>
             </div>
+            {{/if}}
+
             <button type="submit">Save changes</button>
         </form>
     </div>
