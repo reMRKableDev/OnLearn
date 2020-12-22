@@ -1,4 +1,9 @@
 <section>
+    <div>
+        {{#if error_msg}}
+        <p> {{error_msg}} </p>
+        {{/if}}
+    </div>
     <span>{{role}}</span>
     <h1>Welcome {{local.firstName}} {{local.lastName}}</h1>
     <figure>
