@@ -18,6 +18,7 @@ module.exports = {
   loginPrefix: '/login',
   logoutPrefix: '/logout',
   profilePrefix: '/profile',
+  profileEditPrefix: '/profile/:id/edit',
   googleAuthPrefix: '/auth/google',
   googleAuthCallbackPrefix: '/auth/google/callback',
   instructorPrefix: '/instructor',

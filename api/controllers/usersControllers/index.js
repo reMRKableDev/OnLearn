@@ -1,5 +1,11 @@
 const {
   renderUserProfileController,
 } = require('./renderUserProfile.controller');
+const {
+  renderEditUserProfileController,
+} = require('./renderEditUserProfile.controller');
 
-module.exports = { renderUserProfileController };
+module.exports = {
+  renderUserProfileController,
+  renderEditUserProfileController,
+};

@@ -1,0 +1,44 @@
+<section>
+    <div>
+        {{#if message}}
+        <p> {{message}} </p>
+        {{/if}}
+    </div>
+    <div>
+        <h1>Edit Profile</h1>
+        <form action="/profile/{{_id}}/edit" method="post">
+            <div>
+                <figure>
+                    <img src="{{profilePictureUrl}}" alt="profile-avatar">
+                </figure>
+                <input type="file" name="image" id="image-input" />
+                <input type="text" name="existingImage" hidden id="" value="{{profilePictureUrl}}">
+            </div>
+            <div>
+                <label for="name">First Name</label>
+                <input type="text" id="first-name" name="firstName" value="{{firstName}}">
+            </div>
+            <div>
+                <label for="name">Last Name</label>
+                <input type="text" id="last-name" name="lastName" value="{{lastName}}">
+            </div>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" value="{{email}}">
+            </div>
+            <div>
+                <label for="name">Username</label>
+                <input type="text" id="username" name="username" value="{{username}}">
+            </div>
+            <div>
+                <label for="password">New Password</label>
+                <input type="password" id="password" name="password" autocomplete="on" required>
+            </div>
+            <div>
+                <label for="password2">Confirm New Password</label>
+                <input type="password" id="password2" name="password2" required>
+            </div>
+            <button type="submit">Save changes</button>
+        </form>
+    </div>
+</section>
