@@ -43,3 +43,8 @@ exports.fakeUserDataEmptyFields = {
   password: '',
   role: 'student',
 };
+
+exports.fakeIdFormatData = {
+  correctFormat: '5fe0f5e398cf4637b715db3f',
+  incorrectFormat: 'dummy',
+};
