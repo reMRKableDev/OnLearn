@@ -1,10 +1,7 @@
 const {
   findUserByIdService,
 } = require('../../../database/services/modelServices/userServices');
-const {
-  render500ErrorHelper,
-  checkIfValidObjectIdHelper,
-} = require('../helpers');
+const { checkIfValidObjectIdHelper } = require('../helpers');
 
 exports.renderEditUserProfileController = async (req, res) => {
   const { id } = req.params;
@@ -18,11 +15,6 @@ exports.renderEditUserProfileController = async (req, res) => {
   }
 
   const isFoundUser = await findUserByIdService(id);
-
-  if (isFoundUser instanceof Error) {
-    render500ErrorHelper(res);
-    return;
-  }
 
   if (isFoundUser === null) {
     req.flash('error_msg', `A user with this ID doesn't exist!`);
