@@ -6,7 +6,7 @@ module.exports = {
     req.login = jest.fn().mockReturnValue(req);
     req.logout = jest.fn().mockReturnValue(req);
     req.session = {
-      destroy: () => jest.fn().mockReturnValue(req),
+      destroy: jest.fn(),
     };
     req.flash = jest.fn().mockReturnValue(req);
     return req;
