@@ -4,6 +4,7 @@ const logger = require('morgan');
 const express = require('express');
 const passport = require('passport');
 const flash = require('connect-flash');
+const favicon = require('serve-favicon');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const { sessSecret } = require('../configs');
@@ -25,6 +26,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
+app.use(favicon(path.join(__dirname, '../public', '/images/', 'favicon.ico')));
 
 app.set('trust proxy', 1);
 app.use(

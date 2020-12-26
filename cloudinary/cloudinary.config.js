@@ -1,4 +1,4 @@
-const cloudinaryLib = require('cloudinary').v2;
+const cloudinaryLib = require('cloudinary');
 const { cloudKey, cloudName, cloudSecret } = require('../configs');
 
 exports.cloudinary = cloudinaryLib.config({

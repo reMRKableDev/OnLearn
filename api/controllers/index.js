@@ -9,6 +9,7 @@ const {
   authenticateGoogleCallbackController,
 } = require('./usersAuthControllers');
 const {
+  updateUserProfile,
   renderUserProfileController,
   renderEditUserProfileController,
 } = require('./usersControllers');
@@ -18,6 +19,7 @@ const {
 } = require('./instructorsControllers');
 
 module.exports = {
+  updateUserProfile,
   loginUserController,
   logoutUserController,
   renderLoginController,

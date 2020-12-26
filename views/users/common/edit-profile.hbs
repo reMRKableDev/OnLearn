@@ -6,16 +6,24 @@
     </div>
     <div>
         <h1>Edit Profile</h1>
-        <form action="/profile/{{_id}}/edit" method="post">
+        <form action="/profile/{{_id}}/edit" method="post" enctype="multipart/form-data">
             <div>
                 <figure>
                     <img src="{{profilePictureUrl}}" alt="profile-avatar">
                 </figure>
                 <p>Change your profile picture</p>
-                <input type="file" name="image" id="image-input" />
-                <input type="text" name="existingImage" hidden id="" value="{{profilePictureUrl}}">
+                <input type="file" name="image" />
+                <input type="text" name="existingImage" hidden value="{{profilePictureUrl}}">
             </div>
             <br>
+            <div>
+                <label for="name">Username</label>
+                <input type="text" id="username" name="username" value="{{local.username}}">
+            </div>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" value="{{local.email}}">
+            </div>
             <div>
                 <label for="name">First Name</label>
                 <input type="text" id="first-name" name="firstName" value="{{local.firstName}}">
@@ -23,14 +31,6 @@
             <div>
                 <label for="name">Last Name</label>
                 <input type="text" id="last-name" name="lastName" value="{{local.lastName}}">
-            </div>
-            <div>
-                <label for="email">E-mail</label>
-                <input type="text" id="email" name="email" value="{{local.email}}">
-            </div>
-            <div>
-                <label for="name">Username</label>
-                <input type="text" id="username" name="username" value="{{local.username}}">
             </div>
 
             {{#if local.password}}
