@@ -34,10 +34,11 @@ describe('Express Loaders Test Suite', () => {
       'session',
       'initialize',
       'authenticate',
+      'favicon',
     ];
 
     validateNotEmpty(stack);
-    validateArrayLength(stack, 12);
+    validateArrayLength(stack, 13);
     validateArrayContaining(receivedStackLayerNames, expectedStackLayerNames);
   });
 });
