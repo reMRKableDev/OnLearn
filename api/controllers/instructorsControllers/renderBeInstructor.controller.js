@@ -11,5 +11,5 @@ exports.renderBeInstructorController = (req, res) => {
         lastName,
         firstName,
       })
-    : res.redirect('/profile');
+    : res.redirect(302, '/profile');
 };

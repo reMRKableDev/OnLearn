@@ -12,5 +12,5 @@ exports.changeRoleToInstructor = async (req, res) => {
     return;
   }
 
-  res.redirect('/profile');
+  res.redirect(302, '/profile');
 };

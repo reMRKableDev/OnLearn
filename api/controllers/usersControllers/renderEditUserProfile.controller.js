@@ -10,7 +10,7 @@ exports.renderEditUserProfileController = async (req, res) => {
 
   if (!isValidObjectId) {
     req.flash('error_msg', 'Wrong format on the user ID');
-    res.redirect('/profile');
+    res.redirect(302, '/profile');
     return;
   }
 
@@ -18,7 +18,7 @@ exports.renderEditUserProfileController = async (req, res) => {
 
   if (isFoundUser === null) {
     req.flash('error_msg', `A user with this ID doesn't exist!`);
-    res.redirect('/profile');
+    res.redirect(302, '/profile');
     return;
   }
 

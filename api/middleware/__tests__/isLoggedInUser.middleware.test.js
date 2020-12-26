@@ -32,10 +32,9 @@ describe('isLoggedInUser Test Suite', () => {
   test('should validate redirect is being called', () => {
     req.isAuthenticated = () => false;
 
-    const { redirect, status } = res;
+    const { redirect } = res;
 
     isLoggedInUser(req, res, next);
-    validateMockValueToHaveBeenCalled(status);
     validateMockValueToHaveBeenCalled(redirect);
   });
 });
