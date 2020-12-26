@@ -22,7 +22,10 @@ exports.localStrategy = new LocalStrategy(
       );
     }
 
-    const isMatch = await comparePasswordHelper(password, userResults.password);
+    const isMatch = await comparePasswordHelper(
+      password,
+      userResults.local.password
+    );
 
     if (!isMatch) {
       return done(null, false, req.flash('message', 'Incorrect password.'));

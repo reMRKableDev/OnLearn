@@ -1,24 +1,35 @@
+const { hashPasswordHelper } = require('../../../database/services/helpers');
 const User = require('../../../database/models/user.model');
 
-exports.updateUserProfile = (req, res) => {
+exports.updateUserProfile = async (req, res) => {
+  const { local } = req.user;
   const { id } = req.params;
-  const { email, firstName, lastName, username, existingImage } = req.body;
+  const {
+    email,
+    firstName,
+    lastName,
+    username,
+    password,
+    existingImage,
+  } = req.body;
 
-  console.log(req);
+  // TODO: Password confirmation needs to be in place.
+
+  const userPassword = !password
+    ? local.password
+    : await hashPasswordHelper(password);
 
   const profilePictureUrl = req.file ? req.file.path : existingImage;
-  console.log(profilePictureUrl);
 
-  /*   const results = await User.findByIdAndUpdate(
+  // TODO: Make this a service
+  await User.findByIdAndUpdate(
     id,
     {
       profilePictureUrl,
-      local: { email, username, firstName, lastName },
+      local: { email, username, firstName, lastName, password: userPassword },
     },
     { upsert: true, new: true }
   );
 
-  console.log(results);
-
-  res.redirect('/profile'); */
+  res.redirect(302, '/profile');
 };
