@@ -1,5 +1,10 @@
 <section>
     <div>
+        {{#if error_msg}}
+        <p> {{error_msg}} </p>
+        {{/if}}
+    </div>
+    <div>
         {{#if message}}
         <p> {{message}} </p>
         {{/if}}

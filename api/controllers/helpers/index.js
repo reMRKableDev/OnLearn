@@ -3,6 +3,9 @@ const { render500ErrorHelper } = require('./render500Error.helper');
 const { authenticateUserHelper } = require('./authenticateUser.helper');
 const { checkIfValidObjectIdHelper } = require('./checkIfValidObjectId.helper');
 const {
+  handleUpdatedPasswordHelper,
+} = require('./handleUpdatedPassword.helper');
+const {
   renderLoginFormWithErrorsHelper,
 } = require('./renderLoginFormWithErrors.helper');
 const {
@@ -14,6 +17,7 @@ module.exports = {
   render500ErrorHelper,
   authenticateUserHelper,
   checkIfValidObjectIdHelper,
+  handleUpdatedPasswordHelper,
   renderLoginFormWithErrorsHelper,
   renderRegistrationFormWithErrorsHelper,
 };

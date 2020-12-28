@@ -1,35 +1,50 @@
-const { hashPasswordHelper } = require('../../../database/services/helpers');
-const User = require('../../../database/models/user.model');
+const {
+  render500ErrorHelper,
+  handleUpdatedPasswordHelper,
+} = require('../helpers');
+const {
+  updateUserProfileDataService,
+} = require('../../../database/services/modelServices/userServices');
+
+const strongPasswordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
 
 exports.updateUserProfile = async (req, res) => {
   const { local } = req.user;
   const { id } = req.params;
-  const {
-    email,
-    firstName,
-    lastName,
-    username,
-    password,
-    existingImage,
-  } = req.body;
+  const { password, password2, existingImage } = req.body;
 
-  // TODO: Password confirmation needs to be in place.
+  if (password !== password2) {
+    req.flash('error_msg', `Passwords do not match`);
+    res.redirect(302, `/profile/${id}/edit`);
+    return;
+  }
 
-  const userPassword = !password
-    ? local.password
-    : await hashPasswordHelper(password);
+  if (!strongPasswordRegex.test(password)) {
+    req.flash(
+      'error_msg',
+      'Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter.'
+    );
+    res.redirect(302, `/profile/${id}/edit`);
+    return;
+  }
+
+  const userPassword = password
+    ? await handleUpdatedPasswordHelper(password, res)
+    : local.password;
 
   const profilePictureUrl = req.file ? req.file.path : existingImage;
 
-  // TODO: Make this a service
-  await User.findByIdAndUpdate(
+  const isUpdatedUserProfile = await updateUserProfileDataService(
     id,
-    {
-      profilePictureUrl,
-      local: { email, username, firstName, lastName, password: userPassword },
-    },
-    { upsert: true, new: true }
+    req.body,
+    userPassword,
+    profilePictureUrl
   );
+
+  if (isUpdatedUserProfile instanceof Error) {
+    render500ErrorHelper(res);
+    return;
+  }
 
   res.redirect(302, '/profile');
 };
