@@ -1,6 +1,3 @@
-jest.mock(
-  '../../../../database/services/modelServices/userServices/findUserById.service'
-);
 const { renderEditUserProfileController } = require('../index');
 const {
   createNewUserService,
@@ -51,6 +48,19 @@ describe('renderEditUserProfile Controller Test Suite', () => {
 
     validateMockValueToHaveBeenCalled(flash);
     validateMockValueToHaveBeenCalled(redirect);
+  });
+
+  test('should validate req.flash & res.redirect when there is no user found with given Id', async () => {
+    const { correctFormat } = fakeIdFormatData;
+    req.params = { id: correctFormat };
+
+    await renderEditUserProfileController(req, res);
+
+    const { redirect } = res;
+    const { flash } = req;
+
+    validateMockValueToHaveBeenCalled(redirect);
+    validateMockValueToHaveBeenCalled(flash);
   });
 
   test('should validate that res.status is called when the user if found', async () => {
