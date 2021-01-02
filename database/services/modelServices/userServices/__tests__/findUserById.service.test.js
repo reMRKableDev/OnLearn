@@ -1,5 +1,5 @@
 const User = require('../../../../models/user.model');
-const { findUserByIdService, createNewUserService } = require('../index');
+const { findUserByIdService } = require('../index');
 const { fakeIdFormatData, fakeUserData } = require('../../../../fixtures');
 const {
   dbConnect,

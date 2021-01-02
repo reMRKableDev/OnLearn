@@ -1,4 +1,4 @@
-const { fakeUserData, fakeIdFormatData } = require('../../../../fixtures');
+const { fakeUserData } = require('../../../../fixtures');
 const { createNewUserService } = require('../index');
 const {
   dbConnect,
