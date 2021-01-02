@@ -1,4 +1,6 @@
-const { updateUserProfile } = require('./updateUserProfile.controller');
+const {
+  updateUserProfileController,
+} = require('./updateUserProfile.controller');
 const {
   renderUserProfileController,
 } = require('./renderUserProfile.controller');
@@ -7,7 +9,7 @@ const {
 } = require('./renderEditUserProfile.controller');
 
 module.exports = {
-  updateUserProfile,
+  updateUserProfileController,
   renderUserProfileController,
   renderEditUserProfileController,
 };

@@ -9,6 +9,8 @@ module.exports = {
       destroy: jest.fn(),
     };
     req.flash = jest.fn().mockReturnValue(req);
+    req.user = jest.fn().mockReturnValue(req);
+    req.file = jest.fn().mockReturnValue(req);
     return req;
   },
 

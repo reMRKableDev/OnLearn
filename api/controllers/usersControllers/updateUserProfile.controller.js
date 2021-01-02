@@ -8,7 +8,7 @@ const {
 
 const strongPasswordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
 
-exports.updateUserProfile = async (req, res) => {
+exports.updateUserProfileController = async (req, res) => {
   const { local } = req.user;
   const { id } = req.params;
   const { password, password2, existingImage } = req.body;

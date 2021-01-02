@@ -4,6 +4,8 @@ const {
   LOCAL_MONGO_URI,
   SESSION_SECRET,
   DUMMY_PASSWORD,
+  DUMMY_EDIT_PASSWORD_WEAK,
+  DUMMY_EDIT_PASSWORD_STRONG,
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
   CLOUDINARY_KEY,
@@ -29,6 +31,8 @@ module.exports = {
 
   /* Test Fixture Data */
   dummyPassword: DUMMY_PASSWORD,
+  dummyEditPasswordWeak: DUMMY_EDIT_PASSWORD_WEAK,
+  dummyEditPasswordStrong: DUMMY_EDIT_PASSWORD_STRONG,
 
   /* Google Authentication */
   googleAuth: {
