@@ -106,7 +106,7 @@ describe('updateUserProfile Controller Test Suite', () => {
     await updateUserProfileController(req, res);
 
     validateMockValueToHaveBeenCalled(updateUserProfileDataService);
-
+    validateMockValueToHaveBeenCalled(handleUpdatedPasswordHelper);
     validateMockValueToHaveBeenCalled(render500ErrorHelper);
   });
 
@@ -127,6 +127,7 @@ describe('updateUserProfile Controller Test Suite', () => {
     const { redirect } = res;
 
     validateMockValueToHaveBeenCalled(updateUserProfileDataService);
+    validateMockValueToHaveBeenCalled(handleUpdatedPasswordHelper);
     validateMockValueToHaveBeenCalled(redirect);
   });
 });
