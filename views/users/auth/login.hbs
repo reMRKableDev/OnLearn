@@ -21,12 +21,8 @@
         <h1>Login</h1>
         <form action="/login" method="post">
             <div>
-                <label for="user">Username/Email</label>
-                {{#if user}}
-                <input type="text" name="user" value="{{user}}">
-                {{else}}
-                <input type="text" name="user" value="{{user}}">
-                {{/if}}
+                <label for="user">Email</label>
+                <input type="email" name="user" value="{{user}}">
             </div>
             <div>
                 <label for="password">Password</label>
