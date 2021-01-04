@@ -10,6 +10,9 @@
         <img src="{{profilePictureUrl}}" alt="profile-avatar">
     </figure>
     <p><a href="/profile/{{_id}}/edit">Edit Profile</a></p>
+    {{#ifEqualsHelper role 'instructor'}}
+    <p><a href='/course/new'>Register New Course</a></p>
+    {{/ifEqualsHelper}}
 
     <p>Profile info goes here... </p>
 </section>

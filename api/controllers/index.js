@@ -16,6 +16,7 @@ const {
 const {
   changeRoleToInstructor,
   renderBeInstructorController,
+  renderCreateNewCourseController,
 } = require('./instructorsControllers');
 
 module.exports = {
@@ -29,6 +30,7 @@ module.exports = {
   updateUserProfileController,
   renderUserProfileController,
   renderBeInstructorController,
+  renderCreateNewCourseController,
   renderEditUserProfileController,
   authenticateGoogleLoginController,
   authenticateGoogleCallbackController,

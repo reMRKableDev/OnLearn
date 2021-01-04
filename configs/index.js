@@ -24,6 +24,7 @@ module.exports = {
   googleAuthPrefix: '/auth/google',
   googleAuthCallbackPrefix: '/auth/google/callback',
   instructorPrefix: '/instructor',
+  newCoursePrefix: '/course/new',
 
   /* Database  */
   localMongoUri: LOCAL_MONGO_URI,
