@@ -7,6 +7,8 @@ const courseSchema = new Schema({
   instructors: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   modules: [
     {
+      title: { type: String, trim: true },
+      description: { type: String, trim: true },
       progress: { type: Number, default: 0 },
       units: [
         {
