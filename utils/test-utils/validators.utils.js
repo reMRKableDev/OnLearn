@@ -51,7 +51,7 @@ exports.validateMongoDuplicationError = (name, code) => {
 };
 
 exports.validateTypeOf = (received, expected) => {
-  expect(typeof received).not.toBe('number');
+  expect(typeof received).not.toBe('dummyType');
   expect(typeof received).toBe(expected);
 };
 
