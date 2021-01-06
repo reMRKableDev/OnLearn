@@ -1,13 +1,18 @@
-const Course = require('../../../database/models/course.model');
+const {
+  createNewCourseService,
+} = require('../../../database/services/modelServices/courseServices');
+const { render500ErrorHelper } = require('../helpers');
+
 exports.createNewCourseController = async (req, res) => {
   const { title, description } = req.body;
   const { _id } = req.user;
 
-  // TODO: Make service
-  const newCourse = await Course.create({
-    title,
-    description,
-  });
+  const newCourse = await createNewCourseService(title, description);
+
+  if (newCourse instanceof Error) {
+    render500ErrorHelper(res);
+    return;
+  }
 
   newCourse.instructors.push(_id);
   newCourse.save();

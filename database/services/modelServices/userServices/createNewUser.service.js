@@ -2,7 +2,6 @@ const User = require('../../../models/user.model');
 const {
   handleAsyncFunction,
 } = require('../../../../utils/global-utils/handleAsyncFunction.utils');
-
 const { hashPasswordHelper } = require('../../helpers');
 
 exports.createNewUserService = async (requestBody) => {
