@@ -5,16 +5,15 @@
         {{/if}}
     </div>
     <div>
-        <form action="/course/new" method="post" enctype="multipart/form-data">
+        <form action="/course/new" method="post">
             <div>
                 <label for="title">Course Title</label>
-                <input type="text" name="course-title" value="{{title}}" required>
+                <input type="text" name="title" value="{{title}}" required>
             </div>
             <div>
-                <label for="course-desc">Course Description</label>
-                <textarea name="course-desc" id="" cols="30" rows="10" required></textarea>
+                <label for="description">Course Description</label>
+                <textarea name="description" id="" cols="30" rows="10" required></textarea>
             </div>
-            <input type="file" name="course-image" />
             <button type="submit">Submit</button>
         </form>
     </div>
