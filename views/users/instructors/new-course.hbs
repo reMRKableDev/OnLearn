@@ -8,11 +8,11 @@
         <form action="/course/new" method="post" enctype="multipart/form-data">
             <div>
                 <label for="title">Course Title</label>
-                <input type="text" name="course-title" value="{{title}}">
+                <input type="text" name="course-title" value="{{title}}" required>
             </div>
             <div>
                 <label for="course-desc">Course Description</label>
-                <textarea name="course-desc" id="" cols="30" rows="10"></textarea>
+                <textarea name="course-desc" id="" cols="30" rows="10" required></textarea>
             </div>
             <input type="file" name="course-image" />
             <button type="submit">Submit</button>
