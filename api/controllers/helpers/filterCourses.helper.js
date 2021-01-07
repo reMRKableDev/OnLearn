@@ -1,12 +1,12 @@
 const { includesUserTypeHelper } = require('./includesUserType.helper');
 
-exports.filterCoursesHelper = (allCourses, incomingId) => {
-  const coursesTaught = allCourses.filter((courseItem) =>
-    includesUserTypeHelper(courseItem.instructors, incomingId)
+exports.filterCoursesHelper = (allCoursesList, incomingUserId) => {
+  const coursesTaught = allCoursesList.filter((courseItem) =>
+    includesUserTypeHelper(courseItem.instructors, incomingUserId)
   );
 
-  const coursesLearned = allCourses.filter((courseItem) =>
-    includesUserTypeHelper(courseItem.students, incomingId)
+  const coursesLearned = allCoursesList.filter((courseItem) =>
+    includesUserTypeHelper(courseItem.students, incomingUserId)
   );
   return { coursesTaught, coursesLearned };
 };
