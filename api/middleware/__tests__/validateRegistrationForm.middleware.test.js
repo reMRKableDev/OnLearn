@@ -1,11 +1,10 @@
+const { CustomValidation } = require('express-validator/src/context-items');
 const { validateRegistrationForm } = require('../index');
 const {
   validateNotEmpty,
   validateArrayLength,
   validateInstanceOf,
 } = require('../../../utils/test-utils/validators.utils');
-
-const { CustomValidation } = require('express-validator/src/context-items');
 
 let validationResults;
 describe('validateRegistrationForm Middleware Test Suite', () => {
