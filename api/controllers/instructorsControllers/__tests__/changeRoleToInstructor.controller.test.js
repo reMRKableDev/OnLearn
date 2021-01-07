@@ -46,10 +46,5 @@ describe('changeRoleToInstructor Controller Test Suite', () => {
     const { status, render } = res;
     validateMockValueToHaveBeenCalled(status);
     validateMockValueToHaveBeenCalled(render);
-
-    /*     
-
-
- */
   });
 });
