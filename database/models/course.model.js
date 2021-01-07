@@ -5,6 +5,7 @@ const courseSchema = new Schema({
   description: { type: String, trim: true },
   imageUrl: { type: String, default: 'https://placeholder.com/300' },
   instructors: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+  students: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   modules: [
     {
       title: { type: String, trim: true },

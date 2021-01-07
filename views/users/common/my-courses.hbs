@@ -1,12 +1,46 @@
 <section>
-    <div>
-        {{#ifEqualsHelper role 'instructor'}}
+    {{#ifEqualsHelper user.role 'instructor' }}
+    <article>
+        <h2>Courses I'm Teaching</h2>
+        {{#if user.coursesTaught.length}}
+        <ul>
+            {{#each user.coursesTaught}}
+            <li>
+                <div>
+                    <h3> {{this.title}} </h3>
+                    <p> {{this.description}} </p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{else}}
         <div>
-            <h2>Courses I'm Teaching</h2>
+            <p>You aren't teaching any courses yet!</p>
+            <p><a href="/courses/new">Create New Course</a></p>
         </div>
-        {{/ifEqualsHelper}}
+        {{/if}}
+    </article>
+    {{/ifEqualsHelper}}
+
+
+    <article>
+        <h2>Courses I'm Taking</h2>
+        {{#if user.coursesLearned.length}}
+        <ul>
+            {{#each user.coursesLearned}}
+            <li>
+                <div>
+                    <h3> {{this.title}} </h3>
+                    <p> {{this.description}} </p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{else}}
         <div>
-            <h2>Courses I'm Taking</h2>
+            <p>You aren't taking any courses yet!</p>
+            <p><a href="/courses/register">Register To A Course</a></p>
         </div>
-    </div>
+        {{/if}}
+    </article>
 </section>

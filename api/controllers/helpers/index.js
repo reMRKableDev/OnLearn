@@ -1,3 +1,4 @@
+const { filterCoursesHelper } = require('./filterCourses.helper');
 const { createNewUserHelper } = require('./createNewUser.helper');
 const { render500ErrorHelper } = require('./render500Error.helper');
 const { authenticateUserHelper } = require('./authenticateUser.helper');
@@ -13,6 +14,7 @@ const {
 } = require('./renderRegistrationFormWithErrors.helper');
 
 module.exports = {
+  filterCoursesHelper,
   createNewUserHelper,
   render500ErrorHelper,
   authenticateUserHelper,
