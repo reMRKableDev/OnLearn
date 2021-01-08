@@ -23,7 +23,7 @@ This project isn't production-ready. At best it is a Proof Of Concept (POC) of w
 - Jest
 - ESLint
 - Prettier
-- ... plus a whole lot more which you can find in the ```package.json``` file
+- ... plus a whole lot more which you can find in the [package.json](https://github.com/reMRKableDev/OnLearn/blob/main/package.json) file
 
 ## Getting Started
 
@@ -51,7 +51,7 @@ Setup:
 
 1.  Create an account at [Cloudinary](https://cloudinary.com/).
 
-2.  Navigate to your Cloudinary dashboard to find the variables you will later need to add to the ```.env``` file (See How To Use section below)
+2.  Navigate to your Cloudinary dashboard to find the variables you will later need to add to the .env file (See How To Use section below)
 ```
 
 **Google API (OAuth 2.0)**
@@ -79,7 +79,7 @@ Once you've cloned it, install all dependencies using:
 npm install
 ```
 
-This should retrieve all the necessary dependencies named in the `package.json` file.
+This should retrieve all the necessary dependencies named in the [package.json](https://github.com/reMRKableDev/OnLearn/blob/main/package.json) file.
 
 ### How To Use:
 
