@@ -23,5 +23,5 @@ exports.renderStudentListController = async (req, res) => {
     return;
   }
 
-  res.status(200).render('users/instructors/student-list', { local });
+  res.status(200).render('users/instructors/student-list', { local, isCourse });
 };

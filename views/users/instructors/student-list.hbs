@@ -1,7 +1,7 @@
 <section>
     <h2>Students List</h2>
-
-    {{!-- <table>
+    {{#if isCourse.students.length}}
+    <table>
         <thead>
             <tr>
                 <th>Firstname</th>
@@ -9,12 +9,17 @@
             </tr>
         </thead>
         <tbody>
-            {{#each nameList}}
+            {{#each isCourse.students}}
             <tr>
-                <td>{{this.firstName}}</td>
-                <td>{{this.lastName}}</td>
+                <td>{{this.local.firstName}}</td>
+                <td>{{this.local.lastName}}</td>
             </tr>
             {{/each}}
         </tbody>
-    </table> --}}
+    </table>
+    {{else}}
+    <p>Your course doesn't have students registered yet!</p>
+    {{/if}}
+
+    <p><a href="/my-courses/teach/{{isCourse._id}}">Back to Course Details Overview</a></p>
 </section>
