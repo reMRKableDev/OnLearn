@@ -6,15 +6,15 @@ const {
 exports.renderMyCoursesController = async (req, res) => {
   const { _id, local, role } = req.user;
 
-  const allCourses = await findAllCoursesService();
+  const isAllCourses = await findAllCoursesService();
 
-  if (allCourses instanceof Error) {
+  if (isAllCourses instanceof Error) {
     render500ErrorHelper(res);
     return;
   }
 
   const { coursesTaught, coursesLearned } = filterCoursesHelper(
-    allCourses,
+    isAllCourses,
     _id
   );
 

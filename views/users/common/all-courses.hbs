@@ -1,0 +1,21 @@
+<section>
+    <h2>All Courses</h2>
+    {{#if isAllCourses.length}}
+    <ul>
+        {{#each isAllCourses}}
+        <li>
+            <div>
+                <figure>
+                    <img src="{{this.imageUrl}}" alt="course cover image">
+                </figure>
+                <p>{{this.title}}</p>
+                <a href="/course/{{this._id}}details">More Details</a>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+
+    {{else}}
+    <p>There are currently no courses registered in our system!</p>
+    {{/if}}
+</section>
