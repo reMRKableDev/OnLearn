@@ -1,3 +1,6 @@
 const { renderMyCoursesController } = require('./renderMyCourses.controller');
+const {
+  renderTaughtCourseController,
+} = require('./renderTaughtCourse.controller');
 
-module.exports = { renderMyCoursesController };
+module.exports = { renderMyCoursesController, renderTaughtCourseController };

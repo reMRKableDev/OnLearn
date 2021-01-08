@@ -1,0 +1,36 @@
+<section>
+    <h2>{{isCourse.title}}</h2>
+    <p>{{isCourse.description}}</p>
+
+    <div>
+        <figure>
+            <img src="{{isCourse.imageUrl}}" alt="course cover image">
+        </figure>
+        <div>
+            <div>
+                <div>
+                    <p>Registered Students: <span>{{isCourse.students.length}}</span></p>
+                    <a href="/my-courses/{{isCourse._id}}/studentList">See Student List</a>
+                </div>
+                <div>
+                    <p>Edit Course</p>
+                    <a href="/my-courses/{{isCourse._id}}/edit"></a>
+                </div>
+            </div>
+            <div>
+                <h3>Module</h3>
+                {{#if isCourse.modules.length}}
+                <ul>
+                    {{#each isCourse.modules}}
+                    <li>{{this.title}} : <span><a href="/my-courses/{{isCourse._id}}/module/{{this.title}}"></a></span>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{else}}
+                <p>No modules have been added to this course yet!</p>
+                <a href="/course/{{isCourse._id}}/module/new"></a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</section>
