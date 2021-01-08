@@ -20,8 +20,6 @@ exports.renderMyCoursesController = async (req, res) => {
 
   const user = { role, coursesTaught, coursesLearned };
 
-  console.log(user);
-
   res.status(200).render('users/common/my-courses', {
     user,
     local,
