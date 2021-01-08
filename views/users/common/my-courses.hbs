@@ -1,26 +1,29 @@
 <section>
-    {{#ifEqualsHelper user.role 'instructor' }}
+    {{#if user.coursesTaught.length}}
     <article>
         <h2>Courses I'm Teaching</h2>
-        {{#if user.coursesTaught.length}}
         <ul>
             {{#each user.coursesTaught}}
             <li>
                 <div>
                     <h3> {{this.title}} </h3>
                     <p> {{this.description}} </p>
+                    <a href="/my-courses/teach/{{this._id}}">More Details</a>
                 </div>
             </li>
             {{/each}}
         </ul>
-        {{else}}
-        <div>
-            <p>You aren't teaching any courses yet!</p>
-            <p><a href="/courses/new">Create New Course</a></p>
-        </div>
-        {{/if}}
+    </article>
+    {{else}}
+    {{#ifEqualsHelper user.role 'instructor'}}
+    <article>
+        <h2>Courses I'm Teaching</h2>
+        <p>You aren't teaching any courses yet!</p>
+        <p><a href="/courses/new">Create New Course</a></p>
     </article>
     {{/ifEqualsHelper}}
+    {{/if}}
+
 
 
     <article>
@@ -32,6 +35,7 @@
                 <div>
                     <h3> {{this.title}} </h3>
                     <p> {{this.description}} </p>
+                    <a href="/my-courses/learn/{{this._id}}">More Details</a>
                 </div>
             </li>
             {{/each}}
