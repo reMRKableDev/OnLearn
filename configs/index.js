@@ -26,6 +26,8 @@ module.exports = {
   instructorPrefix: '/instructor',
   newCoursePrefix: '/course/new',
   myCoursesPrefix: '/my-courses',
+  myCoursesTeachPrefix: '/my-courses/teach/:id',
+  myCoursesLearnPrefix: '/my-courses/learn/:id',
 
   /* Database  */
   localMongoUri: LOCAL_MONGO_URI,
