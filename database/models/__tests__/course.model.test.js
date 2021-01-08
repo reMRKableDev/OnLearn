@@ -51,7 +51,7 @@ describe('Course Model Test Suite', () => {
     } = validCourse;
 
     validateStringEquality(courseId, expect.anything());
-    validateStringEquality(imageUrl, 'https://placeholder.com/300');
+    validateStringEquality(imageUrl, 'https://via.placeholder.com/200x150');
     validateStringEquality(title, fakeCourseData.title);
     validateStringEquality(description, fakeCourseData.description);
     validateArrayLength(instructors, 1);
