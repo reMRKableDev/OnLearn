@@ -6,7 +6,11 @@ An online learning management system built with Node.js.
 
 This project isn't production-ready. At best it is a Proof Of Concept (POC) of what a LMS built with Node could look and operate like. 
 
-You can find the mockup [here](https://www.figma.com/file/7DxTkysjJFUCjcTs9AsbLp/OnLearn-Mockup?node-id=201%3A5189)
+**Good to check links**
+
+1. You can find the project's kanban board [here](https://github.com/reMRKableDev/OnLearn/projects/1)
+
+2. You can find the mockup [here](https://www.figma.com/file/7DxTkysjJFUCjcTs9AsbLp/OnLearn-Mockup?node-id=201%3A5189)
 
 **Used in this project:**
 - Express.js
