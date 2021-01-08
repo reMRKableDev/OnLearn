@@ -27,6 +27,7 @@ module.exports = {
   newCoursePrefix: '/course/new',
   myCoursesPrefix: '/my-courses',
   myCoursesTeachPrefix: '/my-courses/teach/:id',
+  myCoursesTeachStudentListPrefix: '/my-courses/teach/:id/studentList',
   myCoursesLearnPrefix: '/my-courses/learn/:id',
 
   /* Database  */

@@ -12,6 +12,9 @@ const {
 const {
   renderRegistrationFormWithErrorsHelper,
 } = require('./renderRegistrationFormWithErrors.helper');
+const {
+  redirectNonexistentCourseHelper,
+} = require('./redirectNonexistentCourse.helper');
 
 module.exports = {
   filterCoursesHelper,
@@ -20,6 +23,7 @@ module.exports = {
   authenticateUserHelper,
   checkIfValidObjectIdHelper,
   handleUpdatedPasswordHelper,
+  redirectNonexistentCourseHelper,
   renderLoginFormWithErrorsHelper,
   renderRegistrationFormWithErrorsHelper,
 };

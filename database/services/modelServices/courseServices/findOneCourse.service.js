@@ -5,7 +5,7 @@ const {
 
 exports.findOneCourseService = async (courseId) => {
   const [foundResults, foundError] = await handleAsyncFunction(
-    Course.findById(courseId)
+    Course.findById(courseId).populate('instructors students')
   );
 
   return foundResults || foundError;

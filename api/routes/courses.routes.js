@@ -1,8 +1,13 @@
 const { Router } = require('express');
 const { isInstructor, isLoggedInUser } = require('../middleware');
-const { myCoursesPrefix, myCoursesTeachPrefix } = require('../../configs');
+const {
+  myCoursesPrefix,
+  myCoursesTeachPrefix,
+  myCoursesTeachStudentListPrefix,
+} = require('../../configs');
 const {
   renderMyCoursesController,
+  renderStudentListController,
   renderTaughtCourseController,
 } = require('../controllers');
 
@@ -14,6 +19,12 @@ router.get(
   isLoggedInUser,
   isInstructor,
   renderTaughtCourseController
+);
+router.get(
+  myCoursesTeachStudentListPrefix,
+  isLoggedInUser,
+  isInstructor,
+  renderStudentListController
 );
 
 module.exports = router;

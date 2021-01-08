@@ -2,8 +2,8 @@ jest.mock('../../helpers');
 jest.mock('../../../../database/services/modelServices/courseServices');
 
 const {
-  renderTaughtCourseController,
-} = require('../renderTaughtCourse.controller');
+  renderStudentListController,
+} = require('../renderStudentList.controller');
 const {
   render500ErrorHelper,
   redirectNonexistentCourseHelper,
@@ -22,7 +22,7 @@ const {
 let req;
 let res;
 
-describe('renderTaughtCourse Controller Test Suite', () => {
+describe('renderStudentList Controller Test Suite', () => {
   beforeEach(() => {
     req = mockRequest();
     res = mockResponse();
@@ -39,7 +39,7 @@ describe('renderTaughtCourse Controller Test Suite', () => {
   test('should validate render500ErrorHelper is called', async () => {
     findOneCourseService.mockReturnValueOnce(new Error());
 
-    await renderTaughtCourseController(req, res);
+    await renderStudentListController(req, res);
 
     validateMockValueToHaveBeenCalled(render500ErrorHelper);
   });
@@ -47,13 +47,13 @@ describe('renderTaughtCourse Controller Test Suite', () => {
   test('should validate redirectNonexistentCourseHelper is called', async () => {
     findOneCourseService.mockReturnValueOnce(null);
 
-    await renderTaughtCourseController(req, res);
+    await renderStudentListController(req, res);
 
     validateMockValueToHaveBeenCalled(redirectNonexistentCourseHelper);
   });
 
   test('should validate res.status & res.render is called', async () => {
-    await renderTaughtCourseController(req, res);
+    await renderStudentListController(req, res);
 
     const { status, render } = res;
 
