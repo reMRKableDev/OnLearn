@@ -1,0 +1,19 @@
+<section>
+    <h2>{{isCourse.title}}</h2>
+    <figure>
+        <img src="{{isCourse.imageUrl}}" alt="course cover image">
+    </figure>
+
+    <p>{{isCourse.description}}</p>
+    <p>Number of modules: {{isCourse.modules.length}}</p>
+
+    {{#if isCurrentUserTheCourseInstructor}}
+    <a href="/my-courses/teach/{{isCourse._id}}">See Course Overview</a>
+    {{else if isCurrentUserInStudentList}}
+    <a href="/my-courses/learn/{{isCourse._id}}">Continue Course</a>
+    {{else}}
+    <form action="/course/register" method="post">
+        <button type="submit">Register To Course</button>
+    </form>
+    {{/if}}
+</section>

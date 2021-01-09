@@ -3,6 +3,7 @@ const { isInstructor, isLoggedInUser } = require('../middleware');
 const {
   myCoursesPrefix,
   allCoursesPrefix,
+  courseDetailsPrefix,
   myCoursesTeachPrefix,
   myCoursesTeachStudentListPrefix,
 } = require('../../configs');
@@ -11,10 +12,12 @@ const {
   renderAllCoursesController,
   renderStudentListController,
   renderTaughtCourseController,
+  renderCourseDetailsController,
 } = require('../controllers');
 
 const router = Router();
 
+router.get(courseDetailsPrefix, isLoggedInUser, renderCourseDetailsController);
 router.get(allCoursesPrefix, isLoggedInUser, renderAllCoursesController);
 router.get(myCoursesPrefix, isLoggedInUser, renderMyCoursesController);
 router.get(

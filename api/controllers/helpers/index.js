@@ -15,6 +15,9 @@ const {
 const {
   redirectNonexistentCourseHelper,
 } = require('./redirectNonexistentCourse.helper');
+const {
+  checkCurrentUserRelationToCourseHelper,
+} = require('./checkCurrentUserRelationToCourse.helper');
 
 module.exports = {
   filterCoursesHelper,
@@ -25,5 +28,6 @@ module.exports = {
   handleUpdatedPasswordHelper,
   redirectNonexistentCourseHelper,
   renderLoginFormWithErrorsHelper,
+  checkCurrentUserRelationToCourseHelper,
   renderRegistrationFormWithErrorsHelper,
 };

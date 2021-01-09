@@ -25,6 +25,8 @@ module.exports = {
   googleAuthCallbackPrefix: '/auth/google/callback',
   instructorPrefix: '/instructor',
   newCoursePrefix: '/course/new',
+  courseRegistrationPrefix: '/course/register',
+  courseDetailsPrefix: '/course/:id/details',
   allCoursesPrefix: '/all-courses',
   myCoursesPrefix: '/my-courses',
   myCoursesTeachPrefix: '/my-courses/teach/:id',
