@@ -4,7 +4,7 @@ exports.fakeCourseData = {
   title: 'Dummy Course',
   description: 'Dummy Description',
   instructors: [],
-  modules: [],
+  students: [],
 };
 
 exports.fakeModuleData = {
@@ -32,7 +32,7 @@ exports.fakeUserDataTwo = {
   username: 'fakeUser',
   email: 'fake@user.com',
   password: dummyPassword,
-  role: 'instructor',
+  role: 'student',
 };
 
 exports.fakeUserDataEmptyFields = {

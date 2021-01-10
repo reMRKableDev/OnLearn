@@ -18,6 +18,7 @@ const {
   renderBeInstructorController,
 } = require('./instructorsControllers');
 const {
+  createNewModuleController,
   renderAddModuleController,
   createNewCourseController,
   renderMyCoursesController,
@@ -39,6 +40,7 @@ module.exports = {
   registerNewUserController,
   createNewCourseController,
   renderMyCoursesController,
+  createNewModuleController,
   renderAllCoursesController,
   renderStudentListController,
   updateUserProfileController,

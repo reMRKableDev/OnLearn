@@ -2,9 +2,9 @@ const Course = require('../course.model');
 const User = require('../user.model');
 const {
   fakeUserData,
+  fakeUserDataTwo,
   fakeModuleData,
   fakeCourseData,
-  fakeUserDataTwo,
 } = require('../../fixtures');
 const {
   validateNotEmpty,
@@ -17,123 +17,49 @@ const {
   dbDisconnect,
 } = require('../../../utils/test-utils/dbHandler.utils');
 
-let validUser;
 let validCourse;
+let validStudentUser;
+let validInstructorUser;
 
 describe('Course Model Test Suite', () => {
   beforeAll(async () => {
     await dbConnect();
 
-    validUser = await User.create({
+    validInstructorUser = await User.create({
       local: fakeUserData,
       role: fakeUserData.role,
     });
 
-    const { _id } = validUser;
-    fakeCourseData.instructors.push(_id);
+    validStudentUser = await User.create({
+      local: fakeUserDataTwo,
+      role: fakeUserDataTwo.role,
+    });
+
+    const { _id: instructorId } = validInstructorUser;
+    const { _id: studentId } = validStudentUser;
+
+    fakeCourseData.instructors.push(instructorId);
+    fakeCourseData.students.push(studentId);
 
     validCourse = await Course.create(fakeCourseData);
   });
 
   afterAll(async () => dbDisconnect());
 
-  test('should validate Course with no modules successfully saved', async () => {
+  test('should validate Course successfully saved', async () => {
     validateNotEmpty(validCourse);
 
-    const { _id: userId } = validUser;
-    const {
-      _id: courseId,
-      imageUrl,
-      title,
-      description,
-      instructors,
-      modules,
-    } = validCourse;
+    const { _id: validStudentId } = validStudentUser;
+    const { _id: validInstructorId } = validInstructorUser;
 
-    validateStringEquality(courseId, expect.anything());
+    const { imageUrl, title, description, instructors, students } = validCourse;
+
     validateStringEquality(imageUrl, 'https://via.placeholder.com/200x150');
     validateStringEquality(title, fakeCourseData.title);
     validateStringEquality(description, fakeCourseData.description);
     validateArrayLength(instructors, 1);
-    validateArrayContaining(instructors, [userId]);
-    validateArrayLength(modules, 0);
+    validateArrayContaining(instructors, [validInstructorId]);
+    validateArrayLength(students, 1);
+    validateArrayContaining(students, [validStudentId]);
   });
-
-  test('should validate Course with single module successfully saved', async () => {
-    validateNotEmpty(validCourse);
-    validCourse.modules.push(fakeModuleData);
-
-    const { modules } = validCourse;
-
-    validateArrayLength(modules, 1);
-
-    const { units } = modules[0];
-    const { title, content, videoUrl } = units[0];
-
-    validateArrayLength(units, 1);
-    validateStringEquality(title, fakeModuleData.units[0].title);
-    validateStringEquality(content, fakeModuleData.units[0].content);
-    validateStringEquality(videoUrl, fakeModuleData.units[0].videoUrl);
-  });
-
-  test('should validate Course with single module + multiple units successfully saved', async () => {
-    validateNotEmpty(validCourse);
-
-    const unitTwo = {
-      title: 'Dummy Unit Two',
-      content: 'Dummy Content Two',
-      videoUrl: 'https://dummy2.video.com',
-    };
-
-    validCourse.modules[0].units.push(unitTwo);
-
-    const { modules } = validCourse;
-
-    const { units } = modules[0];
-
-    validateArrayLength(units, 2);
-
-    const { title, content, videoUrl } = units[0];
-
-    validateStringEquality(title, fakeModuleData.units[0].title);
-    validateStringEquality(content, fakeModuleData.units[0].content);
-    validateStringEquality(videoUrl, fakeModuleData.units[0].videoUrl);
-
-    const { title: title2, content: content2, videoUrl: videoUrl2 } = units[1];
-
-    validateStringEquality(title2, unitTwo.title);
-    validateStringEquality(content2, unitTwo.content);
-    validateStringEquality(videoUrl2, unitTwo.videoUrl);
-  });
-
-  // TODO: Write test for multiple modules + single unit in each module
-
-  // TODO: Write test for multiple modules + multiple units
-
-  test('should validate new Course with multiple instructors + no modules successfully saved', async () => {
-    const validUserTwo = await User.create({
-      local: fakeUserDataTwo,
-      role: fakeUserDataTwo.role,
-    });
-    const { _id } = validUserTwo;
-    fakeCourseData.instructors.push(_id);
-    fakeCourseData.title = 'Dummy Course 2';
-
-    validCourse = await Course.create(fakeCourseData);
-
-    validateNotEmpty(validCourse);
-
-    const { _id: userId } = validUser;
-    const { _id: userIdTwo } = validUserTwo;
-
-    const { instructors, modules } = validCourse;
-
-    validateArrayLength(instructors, 2);
-    validateArrayContaining(instructors, [userId, userIdTwo]);
-    validateArrayLength(modules, 0);
-  });
-
-  // TODO: Write test for multiple instructors + single module
-
-  // TODO: Write test for multiple instructors + multiple modules
 });
