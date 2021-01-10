@@ -15,16 +15,16 @@ const {
 } = require('./usersControllers');
 const {
   changeRoleToInstructor,
-  createNewCourseController,
   renderBeInstructorController,
-  renderCreateNewCourseController,
 } = require('./instructorsControllers');
 const {
+  createNewCourseController,
   renderMyCoursesController,
   renderAllCoursesController,
   renderStudentListController,
   renderTaughtCourseController,
   renderCourseDetailsController,
+  renderCreateNewCourseController,
 } = require('./coursesControllers');
 
 module.exports = {

@@ -6,6 +6,7 @@ const {
   allCoursesPrefix,
   courseDetailsPrefix,
   myCoursesTeachPrefix,
+  myCoursesTeachAddModulePrefix,
   myCoursesTeachStudentListPrefix,
 } = require('../../configs');
 const {
@@ -42,5 +43,6 @@ router.get(
   isInstructor,
   renderStudentListController
 );
+router.get(myCoursesTeachAddModulePrefix, isLoggedInUser, isInstructor);
 
 module.exports = router;
