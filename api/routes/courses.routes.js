@@ -6,12 +6,9 @@ const {
   allCoursesPrefix,
   courseDetailsPrefix,
   myCoursesTeachPrefix,
-  myCoursesTeachAddModulePrefix,
   myCoursesTeachStudentListPrefix,
 } = require('../../configs');
 const {
-  createNewModuleController,
-  renderAddModuleController,
   createNewCourseController,
   renderMyCoursesController,
   renderAllCoursesController,
