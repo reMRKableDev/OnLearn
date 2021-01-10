@@ -39,9 +39,6 @@ describe('checkCurrentUserRelationToCourse Helper Test Suite', () => {
       dummyStudentsList
     );
 
-    console.log('student', isCurrentUserInStudentList);
-    console.log('instructor', isCurrentUserTheCourseInstructor);
-
     validateEquality(isCurrentUserInStudentList, false);
     validateEquality(isCurrentUserTheCourseInstructor, true);
   });
