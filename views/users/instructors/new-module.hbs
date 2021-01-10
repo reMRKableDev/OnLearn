@@ -1,0 +1,45 @@
+<section>
+    <h2>Add new module</h2>
+
+    <div>
+        <p> Create a new module to your course. Consider a module similar to a chapter in a book. A book can have many
+            chapter and within those chapters are topics.
+        </p>
+
+        <p> The OnLearn platform follows the approach of the book with modules. A course can have singular
+            or multiple modules depending on it's size. Each module is required to have at least on topic/unit upon
+            creation. More topics/units can of course be added later.
+        </p>
+    </div>
+
+    <div>
+        {{#if message}}
+        <p> {{message}} </p>
+        {{/if}}
+    </div>
+    <div>
+        <form action="/my-courses/teach/{{isCourse._id}}/module/new" method="post">
+            <div>
+                <label for="title">Module Title</label>
+                <input type="text" name="title" required>
+            </div>
+            <div>
+                <label for="description">Module Description</label>
+                <textarea name="description" id="" cols="30" rows="10" required></textarea>
+            </div>
+            <div>
+                <label for="unitTitle">Topic/Unit Title</label>
+                <input type="text" name="unitTitle" required>
+            </div>
+            <div>
+                <label for="unitContent">Topic/Unit Content</label>
+                <textarea name="unitContent" id="" cols="30" rows="10" required></textarea>
+            </div>
+            <div>
+                <label for="unitVideoUrl">Topic/Unit Video Url (optional)</label>
+                <input type="text" name="unitVideoUrl">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
