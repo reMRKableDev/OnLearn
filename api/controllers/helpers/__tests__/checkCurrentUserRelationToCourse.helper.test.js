@@ -1,5 +1,4 @@
 const { checkCurrentUserRelationToCourseHelper } = require('../index');
-
 const {
   validateEquality,
 } = require('../../../../utils/test-utils/validators.utils');
@@ -43,7 +42,7 @@ describe('checkCurrentUserRelationToCourse Helper Test Suite', () => {
     validateEquality(isCurrentUserTheCourseInstructor, true);
   });
 
-  test('should validate current user as a student', () => {
+  /*   test('should validate current user as a student', () => {
     const dummyCurrentUserId = dummyStudentThreeId;
 
     const {
@@ -57,5 +56,5 @@ describe('checkCurrentUserRelationToCourse Helper Test Suite', () => {
 
     validateEquality(isCurrentUserInStudentList, true);
     validateEquality(isCurrentUserTheCourseInstructor, false);
-  });
+  }); */
 });

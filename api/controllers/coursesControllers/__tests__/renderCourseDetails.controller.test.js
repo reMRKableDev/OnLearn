@@ -1,38 +1,35 @@
 jest.mock('../../helpers');
 jest.mock('../../../../database/services/modelServices/courseServices');
 
-const { renderCourseDetailsController } = require('../index');
+const {
+  setupReqRes,
+  clearMocks,
+} = require('../../../../utils/test-utils/courseControllerDeps');
+const {
+  findOneCourseService,
+} = require('../../../../database/services/modelServices/courseServices');
 const {
   render500ErrorHelper,
   redirectNonexistentCourseHelper,
   checkCurrentUserRelationToCourseHelper,
 } = require('../../helpers');
 const {
-  findOneCourseService,
-} = require('../../../../database/services/modelServices/courseServices');
-const {
   validateMockValueToHaveBeenCalled,
 } = require('../../../../utils/test-utils/validators.utils');
-const {
-  mockRequest,
-  mockResponse,
-} = require('../../../../utils/test-utils/interceptors.utils');
+const { renderCourseDetailsController } = require('../index');
 
 let req;
 let res;
 
 describe('renderCourseDetails Controller Test Suite', () => {
   beforeEach(() => {
-    req = mockRequest();
-    res = mockResponse();
-
-    req.user = {
-      local: expect.anything(),
-    };
+    const { request, response } = setupReqRes();
+    req = request;
+    res = response;
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    clearMocks();
   });
 
   test('should validate render500ErrorHelper is called', async () => {

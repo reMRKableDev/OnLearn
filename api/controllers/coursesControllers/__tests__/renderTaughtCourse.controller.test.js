@@ -15,25 +15,22 @@ const {
   validateMockValueToHaveBeenCalled,
 } = require('../../../../utils/test-utils/validators.utils');
 const {
-  mockRequest,
-  mockResponse,
-} = require('../../../../utils/test-utils/interceptors.utils');
+  setupReqRes,
+  clearMocks,
+} = require('../../../../utils/test-utils/courseControllerDeps');
 
 let req;
 let res;
 
 describe('renderTaughtCourse Controller Test Suite', () => {
   beforeEach(() => {
-    req = mockRequest();
-    res = mockResponse();
-
-    req.user = {
-      local: expect.anything(),
-    };
+    const { request, response } = setupReqRes();
+    req = request;
+    res = response;
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    clearMocks();
   });
 
   test('should validate render500ErrorHelper is called', async () => {

@@ -2,8 +2,9 @@ jest.mock('../../helpers');
 jest.mock('../../../../database/services/modelServices/courseServices');
 
 const {
-  renderStudentListController,
-} = require('../renderStudentList.controller');
+  setupReqRes,
+  clearMocks,
+} = require('../../../../utils/test-utils/courseControllerDeps');
 const {
   render500ErrorHelper,
   redirectNonexistentCourseHelper,
@@ -15,27 +16,24 @@ const {
   validateMockValueToHaveBeenCalled,
 } = require('../../../../utils/test-utils/validators.utils');
 const {
-  mockRequest,
-  mockResponse,
-} = require('../../../../utils/test-utils/interceptors.utils');
+  renderStudentListController,
+} = require('../renderStudentList.controller');
 
 let req;
 let res;
 
+beforeEach(() => {
+  const { request, response } = setupReqRes();
+
+  req = request;
+  res = response;
+});
+
+afterEach(() => {
+  clearMocks();
+});
+
 describe('renderStudentList Controller Test Suite', () => {
-  beforeEach(() => {
-    req = mockRequest();
-    res = mockResponse();
-
-    req.user = {
-      local: expect.anything(),
-    };
-  });
-
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
   test('should validate render500ErrorHelper is called', async () => {
     findOneCourseService.mockReturnValueOnce(new Error());
 
