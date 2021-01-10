@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const { isInstructor, isLoggedInUser } = require('../middleware');
 const {
+  newCoursePrefix,
   myCoursesPrefix,
   allCoursesPrefix,
   courseDetailsPrefix,
@@ -8,15 +9,24 @@ const {
   myCoursesTeachStudentListPrefix,
 } = require('../../configs');
 const {
+  createNewCourseController,
   renderMyCoursesController,
   renderAllCoursesController,
   renderStudentListController,
   renderTaughtCourseController,
   renderCourseDetailsController,
+  renderCreateNewCourseController,
 } = require('../controllers');
 
 const router = Router();
 
+router.get(
+  newCoursePrefix,
+  isLoggedInUser,
+  isInstructor,
+  renderCreateNewCourseController
+);
+router.post(newCoursePrefix, isLoggedInUser, createNewCourseController);
 router.get(courseDetailsPrefix, isLoggedInUser, renderCourseDetailsController);
 router.get(allCoursesPrefix, isLoggedInUser, renderAllCoursesController);
 router.get(myCoursesPrefix, isLoggedInUser, renderMyCoursesController);
