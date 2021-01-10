@@ -3,7 +3,6 @@ const User = require('../user.model');
 const {
   fakeUserData,
   fakeUserDataTwo,
-  fakeModuleData,
   fakeCourseData,
 } = require('../../fixtures');
 const {

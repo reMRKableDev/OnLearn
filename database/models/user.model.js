@@ -39,7 +39,6 @@ const userSchema = new Schema({
     enum: ['student', 'instructor', 'admin'],
     default: 'student',
   },
-  courses: [{ type: Schema.Types.ObjectId, ref: 'Course' }],
 });
 
 module.exports = model('User', userSchema);
