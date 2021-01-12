@@ -13,13 +13,21 @@ const {
 const {
   renderCreateNewCourseController,
 } = require('./renderCreateNewCourse.controller');
+const {
+  renderEditTaughtCourseController,
+} = require('./renderEditTaughtCourse.controller');
+const {
+  updateTaughtCourseController,
+} = require('./updateTaughtCourse.controller');
 
 module.exports = {
   createNewCourseController,
   renderMyCoursesController,
   renderAllCoursesController,
   renderStudentListController,
+  updateTaughtCourseController,
   renderTaughtCourseController,
   renderCourseDetailsController,
   renderCreateNewCourseController,
+  renderEditTaughtCourseController,
 };

@@ -1,13 +1,12 @@
 const {
-  findOneCourseService,
-} = require('../../../database/services/modelServices/courseServices');
-
-const {
   render500ErrorHelper,
   redirectNonexistentCourseHelper,
 } = require('../helpers');
+const {
+  findOneCourseService,
+} = require('../../../database/services/modelServices/courseServices');
 
-exports.renderTaughtCourseController = async (req, res) => {
+exports.renderEditTaughtCourseController = async (req, res) => {
   const { local } = req.user;
   const { id } = req.params;
 
@@ -23,7 +22,7 @@ exports.renderTaughtCourseController = async (req, res) => {
     return;
   }
 
-  res.status(200).render('users/instructors/courses-taught', {
+  res.status(200).render('users/instructors/edit-course', {
     local,
     isCourse,
   });
