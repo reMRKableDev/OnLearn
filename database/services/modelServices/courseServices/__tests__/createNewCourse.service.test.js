@@ -15,9 +15,15 @@ describe('createNewCourse Service Test Suite', () => {
   afterEach(async () => dbDisconnect());
 
   test('should validate returning error while saving course', async () => {
-    const newCourse = await createNewCourseService(fakeCourseData);
+    const { title, description } = fakeCourseData;
 
-    validateInstanceOf(newCourse, Error);
+    const newCourse = await createNewCourseService(title, description);
+
+    validateNotEmpty(newCourse);
+
+    const newCourseDuplicate = await createNewCourseService(title, description);
+
+    validateInstanceOf(newCourseDuplicate, Error);
   });
 
   test('should validate successfully saving course', async () => {
