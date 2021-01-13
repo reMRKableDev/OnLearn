@@ -5,11 +5,9 @@ const {
 } = require('../index');
 const { fakeCourseData, fakeIdFormatData } = require('../../../../fixtures');
 const {
-  validateEquality,
   validateNotEmpty,
   validateInstanceOf,
   validateArrayLength,
-  validateStringEquality,
 } = require('../../../../../utils/test-utils/validators.utils');
 const {
   dbConnect,
