@@ -15,6 +15,7 @@ const {
   createNewCourseController,
   renderMyCoursesController,
   renderAllCoursesController,
+  registerToCourseController,
   renderStudentListController,
   renderTaughtCourseController,
   updateTaughtCourseController,
@@ -34,6 +35,11 @@ router.get(
 );
 router.post(newCoursePrefix, isLoggedInUser, createNewCourseController);
 router.get(courseDetailsPrefix, isLoggedInUser, renderCourseDetailsController);
+router.post(
+  courseRegistrationPrefix,
+  isLoggedInUser,
+  registerToCourseController
+);
 router.get(allCoursesPrefix, isLoggedInUser, renderAllCoursesController);
 router.get(myCoursesPrefix, isLoggedInUser, renderMyCoursesController);
 router.get(

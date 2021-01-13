@@ -20,6 +20,7 @@ const {
 const {
   createNewCourseController,
   renderMyCoursesController,
+  registerToCourseController,
   renderAllCoursesController,
   renderStudentListController,
   updateTaughtCourseController,
@@ -41,6 +42,7 @@ module.exports = {
   createNewCourseController,
   renderMyCoursesController,
   renderAllCoursesController,
+  registerToCourseController,
   renderStudentListController,
   updateUserProfileController,
   renderUserProfileController,

@@ -15,7 +15,7 @@ exports.createNewCourseController = async (req, res) => {
   }
 
   newCourse.instructors.push(_id);
-  newCourse.save();
+  await newCourse.save();
 
   res.redirect('/my-courses');
 };

@@ -12,7 +12,7 @@
     {{else if isCurrentUserInStudentList}}
     <a href="/my-courses/learn/{{isCourse._id}}">Continue Course</a>
     {{else}}
-    <form action="/course/register" method="post">
+    <form action="/course/{{isCourse._id}}/register" method="post">
         <button type="submit">Register To Course</button>
     </form>
     {{/if}}
