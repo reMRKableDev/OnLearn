@@ -22,6 +22,7 @@ const {
   updateTaughtCourseController,
   deleteTaughtCourseController,
   renderCourseDetailsController,
+  renderLearnedCourseController,
   renderCreateNewCourseController,
   renderEditTaughtCourseController,
 } = require('../controllers');
@@ -43,7 +44,7 @@ router.post(
 );
 router.get(allCoursesPrefix, isLoggedInUser, renderAllCoursesController);
 router.get(myCoursesPrefix, isLoggedInUser, renderMyCoursesController);
-router.get(myCoursesLearnPrefix, isLoggedInUser);
+router.get(myCoursesLearnPrefix, isLoggedInUser, renderLearnedCourseController);
 router.get(
   myCoursesTeachPrefix,
   isLoggedInUser,
