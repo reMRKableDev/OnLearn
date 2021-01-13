@@ -6,7 +6,7 @@ const {
   renderUserProfileController,
   renderEditUserProfileController,
 } = require('../controllers');
-const fileUploader = require('../../cloudinary');
+const fileUploader = require('../../configs/cloudinary');
 
 const router = Router();
 

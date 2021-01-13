@@ -8,7 +8,7 @@ const {
   validateArrayLength,
   validateStringEquality,
   validateArrayContaining,
-} = require('../../utils/test-utils/validators.utils');
+} = require('../../../utils/test-utils/validators.utils');
 
 describe('Cloudinary uploader Test Suite', () => {
   test('should validate fileUploader object to not be empty ', () => {

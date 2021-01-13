@@ -19,7 +19,7 @@ exports.updateUserProfileController = async (req, res) => {
     return;
   }
 
-  if (!strongPasswordRegex.test(password)) {
+  if (password && !strongPasswordRegex.test(password)) {
     req.flash(
       'error_msg',
       'Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter.'
