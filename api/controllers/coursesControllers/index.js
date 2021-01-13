@@ -23,6 +23,9 @@ const {
 const {
   deleteTaughtCourseController,
 } = require('./deleteTaughtCourse.controller');
+const {
+  renderLearnedCourseController,
+} = require('./renderLearnedCourse.controller');
 
 module.exports = {
   createNewCourseController,
@@ -34,6 +37,7 @@ module.exports = {
   updateTaughtCourseController,
   renderTaughtCourseController,
   renderCourseDetailsController,
+  renderLearnedCourseController,
   renderCreateNewCourseController,
   renderEditTaughtCourseController,
 };

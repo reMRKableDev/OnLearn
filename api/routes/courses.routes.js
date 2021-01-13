@@ -6,6 +6,7 @@ const {
   allCoursesPrefix,
   courseDetailsPrefix,
   myCoursesTeachPrefix,
+  myCoursesLearnPrefix,
   courseRegistrationPrefix,
   myCoursesTeachEditCoursePrefix,
   myCoursesTeachDeleteCoursePrefix,
@@ -42,6 +43,7 @@ router.post(
 );
 router.get(allCoursesPrefix, isLoggedInUser, renderAllCoursesController);
 router.get(myCoursesPrefix, isLoggedInUser, renderMyCoursesController);
+router.get(myCoursesLearnPrefix, isLoggedInUser);
 router.get(
   myCoursesTeachPrefix,
   isLoggedInUser,
