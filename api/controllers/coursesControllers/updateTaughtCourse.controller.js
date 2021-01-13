@@ -22,5 +22,6 @@ exports.updateTaughtCourseController = async (req, res) => {
     return;
   }
 
-  res.redirect(302, `/my-courses/teach/${id}`);
+  req.flash('success_msg', 'Course successfully updated!');
+  res.redirect(`/my-courses/teach/${id}`);
 };

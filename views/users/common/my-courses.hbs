@@ -1,4 +1,8 @@
 <section>
+    {{#if success_msg}}
+    <span>{{success_msg}}</span>
+    {{/if}}
+
     {{#if user.coursesTaught.length}}
     <article>
         <h2>Courses I'm Teaching</h2>
@@ -19,7 +23,7 @@
     <article>
         <h2>Courses I'm Teaching</h2>
         <p>You aren't teaching any courses yet!</p>
-        <p><a href="/courses/new">Create New Course</a></p>
+        <p><a href="/course/new">Create New Course</a></p>
     </article>
     {{/ifEqualsHelper}}
     {{/if}}

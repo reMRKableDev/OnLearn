@@ -5,7 +5,7 @@ const {
 
 exports.deleteCourseService = async (courseId) => {
   const [results, error] = await handleAsyncFunction(
-    Course.findByIdAndRemove(courseId)
+    Course.findByIdAndDelete(courseId)
   );
 
   return results || error;

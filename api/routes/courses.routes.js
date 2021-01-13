@@ -7,6 +7,7 @@ const {
   courseDetailsPrefix,
   myCoursesTeachPrefix,
   myCoursesTeachEditCourse,
+  myCoursesTeachDeleteCourse,
   myCoursesTeachStudentListPrefix,
 } = require('../../configs');
 const {
@@ -15,6 +16,7 @@ const {
   renderAllCoursesController,
   renderStudentListController,
   updateTaughtCourseController,
+  deleteTaughtCourseController,
   renderTaughtCourseController,
   renderCourseDetailsController,
   renderCreateNewCourseController,
@@ -55,6 +57,11 @@ router.post(
   myCoursesTeachEditCourse,
   isLoggedInUser,
   updateTaughtCourseController
+);
+router.post(
+  myCoursesTeachDeleteCourse,
+  isLoggedInUser,
+  deleteTaughtCourseController
 );
 
 module.exports = router;
