@@ -6,8 +6,9 @@ const {
   allCoursesPrefix,
   courseDetailsPrefix,
   myCoursesTeachPrefix,
-  myCoursesTeachEditCourse,
-  myCoursesTeachDeleteCourse,
+  courseRegistrationPrefix,
+  myCoursesTeachEditCoursePrefix,
+  myCoursesTeachDeleteCoursePrefix,
   myCoursesTeachStudentListPrefix,
 } = require('../../configs');
 const {
@@ -48,18 +49,18 @@ router.get(
   renderStudentListController
 );
 router.get(
-  myCoursesTeachEditCourse,
+  myCoursesTeachEditCoursePrefix,
   isLoggedInUser,
   isInstructor,
   renderEditTaughtCourseController
 );
 router.post(
-  myCoursesTeachEditCourse,
+  myCoursesTeachEditCoursePrefix,
   isLoggedInUser,
   updateTaughtCourseController
 );
 router.post(
-  myCoursesTeachDeleteCourse,
+  myCoursesTeachDeleteCoursePrefix,
   isLoggedInUser,
   deleteTaughtCourseController
 );
