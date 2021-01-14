@@ -6,11 +6,13 @@ A simple online Learning Management System (LMS) built with Node.js.
 
 This project isn't production-ready. At best it is a Proof Of Concept (POC).
 
-**Important links to check out**
+🚨 **Important links to check out** 
 
-1. You can find the project's kanban board [here](https://github.com/reMRKableDev/OnLearn/projects/1)
+1. You can find the project's kanban board 👉 [here](https://github.com/reMRKableDev/OnLearn/projects/1) 👈
 
-2. You can find the mockup [here](https://www.figma.com/file/7DxTkysjJFUCjcTs9AsbLp/OnLearn-Mockup?node-id=201%3A5189)
+2. You can find the project's mockup 👉 [here](https://www.figma.com/file/7DxTkysjJFUCjcTs9AsbLp/OnLearn-Mockup?node-id=201%3A5189) 👈
+   
+3. You can find the project's database diagram 👉 [here](https://lucid.app/lucidchart/invitations/accept/aabc65a4-1910-428c-ae3a-8a39c22cdbe9) 👈
 
 
 ## Getting Started
@@ -34,13 +36,13 @@ OAuth 2.0 Clients (Google API)
 Cloudinary is an end-to-end image- and video-management solution for websites and mobile apps, covering everything from image and video uploads, storage, manipulations, optimizations to delivery.
 
 All images and/or videos uploaded within this app are stored in a cloudinary account. You will need to create your account if you want to properly test this functionality out locally. 
-```
-Setup: 
+
+*Setup:* 
 
 1.  Create an account at [Cloudinary](https://cloudinary.com/).
 
-2.  Navigate to your Cloudinary dashboard to find the variables you will later need to add to the .env file (See How To Use section below)
-```
+2.  Navigate to your Cloudinary dashboard to find the variables you will later need to add to the ```.env``` file (See How To Use section below)
+
 
 **Google API (OAuth 2.0)**
 
