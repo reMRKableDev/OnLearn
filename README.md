@@ -12,7 +12,7 @@ This project isn't production-ready. At best it is a Proof Of Concept (POC).
 
 2. You can find the project's mockup 👉 [here](https://www.figma.com/file/7DxTkysjJFUCjcTs9AsbLp/OnLearn-Mockup?node-id=201%3A5189) 👈
    
-3. You can find the project's database diagram 👉 [here](https://lucid.app/lucidchart/invitations/accept/aabc65a4-1910-428c-ae3a-8a39c22cdbe9) 👈
+3. You can find the project's database diagram 👉 [here](https://github.com/reMRKableDev/OnLearn/blob/main/assets/db-diagram.png) 👈
 
 
 ## Getting Started
