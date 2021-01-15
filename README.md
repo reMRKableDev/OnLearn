@@ -134,3 +134,5 @@ The initial inspirations for this project are:
  - The [hypatia](https://github.com/gazpachu/hypatia) project by [Gazpachu(Joan Mira)](https://github.com/gazpachu)
  - The [node-lms](https://github.com/Luci-Lawless/node-lms) project by [Luci-Lawless](https://github.com/Luci-Lawless).
  - The [node-lms](https://github.com/edwinmah/node-lms) project by [EdwinMah](https://github.com/edwinmah).
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
