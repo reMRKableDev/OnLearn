@@ -5,16 +5,13 @@ exports.fakeCourseData = {
   description: 'Dummy Description',
   instructors: [],
   students: [],
+  lessons: [],
 };
 
-exports.fakeModuleData = {
-  units: [
-    {
-      title: 'Dummy Unit',
-      content: 'Dummy Content',
-      videoUrl: 'https://dummy.video.com',
-    },
-  ],
+exports.fakeLessonData = {
+  topic: 'Dummy Topic',
+  content: 'Dummy Content',
+  videoUrl: 'www.dummy.video',
 };
 
 exports.fakeUserData = {
