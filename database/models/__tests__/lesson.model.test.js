@@ -9,11 +9,9 @@ const {
 } = require('../../fixtures');
 const {
   validateNotEmpty,
-  validateEquality,
   validateObjectMatch,
   validateArrayLength,
   validateStringEquality,
-  validateArrayContaining,
 } = require('../../../utils/test-utils/validators.utils');
 const {
   dbConnect,
