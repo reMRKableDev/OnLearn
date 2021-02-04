@@ -1,0 +1,31 @@
+<section>
+    <div>
+        {{#if success_msg}}
+        <p>{{success_msg}}</p>
+        {{/if}}
+    </div>
+
+    <div>
+        <h2>{{isCourse.title}} lessons</h2>
+        <div>
+            <div>
+                {{#if isCourse.lessons}}
+                {{#each isCourse.lessons}}
+                <div>
+                    <p>{{this.topic}}</p>
+                    <a href="/my-courses/teach/{{isCourse._id}}/lesson/{{this._id}}">See Lesson</a>
+                    <a href="/my-courses/teach/{{isCourse._id}}/lesson/{{this._id}}/edit">Edit Lesson</a>
+                </div>
+                {{/each}}
+
+                {{else}}
+                <div>
+                    <p>There are no lessons yet!</p>
+                </div>
+                {{/if}}
+
+                <a href="/my-courses/teach/{{isCourse._id}}/lesson/new">Add New Lesson</a>
+            </div>
+        </div>
+    </div>
+</section>

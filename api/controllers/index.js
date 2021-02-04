@@ -32,6 +32,7 @@ const {
   renderEditTaughtCourseController,
 } = require('./coursesControllers');
 const {
+  allLessonsTaughtController,
   createNewLessonController,
   renderCreateNewLessonController,
 } = require('./lessonsControllers');
@@ -47,6 +48,7 @@ module.exports = {
   createNewCourseController,
   createNewLessonController,
   renderMyCoursesController,
+  allLessonsTaughtController,
   renderAllCoursesController,
   registerToCourseController,
   renderStudentListController,
