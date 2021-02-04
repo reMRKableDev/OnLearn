@@ -6,7 +6,7 @@ const {
   redirectNonexistentCourseHelper,
 } = require('../helpers');
 
-exports.allLessonsTaughtController = async (req, res) => {
+exports.renderAllLessonsTaughtController = async (req, res) => {
   const { id } = req.params;
   const { local } = req.user;
 

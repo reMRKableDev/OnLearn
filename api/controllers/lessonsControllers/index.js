@@ -1,11 +1,13 @@
 const { createNewLessonController } = require('./createNewLesson.controller');
-const { allLessonsTaughtController } = require('./allLessonsTaught.controller');
 const {
   renderCreateNewLessonController,
 } = require('./renderCreateNewLesson.controller');
+const {
+  renderAllLessonsTaughtController,
+} = require('./renderAllLessonsTaught.controller');
 
 module.exports = {
   createNewLessonController,
-  allLessonsTaughtController,
+  renderAllLessonsTaughtController,
   renderCreateNewLessonController,
 };

@@ -32,9 +32,9 @@ const {
   renderEditTaughtCourseController,
 } = require('./coursesControllers');
 const {
-  allLessonsTaughtController,
   createNewLessonController,
   renderCreateNewLessonController,
+  renderAllLessonsTaughtController,
 } = require('./lessonsControllers');
 
 module.exports = {
@@ -48,7 +48,6 @@ module.exports = {
   createNewCourseController,
   createNewLessonController,
   renderMyCoursesController,
-  allLessonsTaughtController,
   renderAllCoursesController,
   registerToCourseController,
   renderStudentListController,
@@ -63,6 +62,7 @@ module.exports = {
   renderCreateNewCourseController,
   renderCreateNewLessonController,
   renderEditUserProfileController,
+  renderAllLessonsTaughtController,
   renderEditTaughtCourseController,
   authenticateGoogleLoginController,
   authenticateGoogleCallbackController,

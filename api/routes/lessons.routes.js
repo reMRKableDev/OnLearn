@@ -5,8 +5,8 @@ const {
   myCoursesTeachAllLessonsPrefix,
 } = require('../../configs');
 const {
-  allLessonsTaughtController,
   renderCreateNewLessonController,
+  renderAllLessonsTaughtController,
 } = require('../controllers');
 
 const router = Router();
@@ -15,7 +15,7 @@ router.get(
   myCoursesTeachAllLessonsPrefix,
   isLoggedInUser,
   isInstructor,
-  allLessonsTaughtController
+  renderAllLessonsTaughtController
 );
 router.get(
   myCoursesTeachNewLessonPrefix,
