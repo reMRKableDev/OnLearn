@@ -3,6 +3,7 @@ const { apiPrefix } = require('../configs');
 const indexRouter = require('../api/routes/index.routes');
 const usersRouter = require('../api/routes/users.routes');
 const coursesRouter = require('../api/routes/courses.routes');
+const lessonsRouter = require('../api/routes/lessons.routes');
 const usersAuthRouter = require('../api/routes/users-auth.routes');
 const instructorsRouter = require('../api/routes/instructors.routes');
 
@@ -10,6 +11,7 @@ module.exports = (app) => {
   app.use(apiPrefix, indexRouter);
   app.use(apiPrefix, usersRouter);
   app.use(apiPrefix, coursesRouter);
+  app.use(apiPrefix, lessonsRouter);
   app.use(apiPrefix, usersAuthRouter);
   app.use(apiPrefix, instructorsRouter);
 

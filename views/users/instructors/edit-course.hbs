@@ -1,5 +1,9 @@
 <section>
     <div>
+        <h2>Edit Course</h2>
+        <form action="/my-courses/teach/{{isCourse._id}}/delete" method="post">
+            <button type="submit">Delete Course</button>
+        </form>
         <form action="/my-courses/teach/{{isCourse._id}}/edit" method="post">
             <div>
                 <label for="title">Course Title</label>
