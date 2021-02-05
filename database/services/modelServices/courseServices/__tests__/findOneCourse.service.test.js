@@ -1,10 +1,5 @@
 const { findOneCourseService, createNewCourseService } = require('../index');
-const { createNewUserService } = require('../../userServices');
-const {
-  fakeUserData,
-  fakeCourseData,
-  fakeIdFormatData,
-} = require('../../../../fixtures');
+const { fakeCourseData, fakeIdFormatData } = require('../../../../fixtures');
 const {
   dbConnect,
   dbDisconnect,
@@ -12,7 +7,6 @@ const {
 const {
   validateNotEmpty,
   validateInstanceOf,
-  validateStringEquality,
 } = require('../../../../../utils/test-utils/validators.utils');
 
 describe('findOneCourse Service Test Suite', () => {
@@ -28,23 +22,14 @@ describe('findOneCourse Service Test Suite', () => {
   });
 
   test('should validate successfully finding one saved course', async () => {
-    const newUser = await createNewUserService(fakeUserData);
-
     const { title, description } = fakeCourseData;
 
     const newCourse = await createNewCourseService(title, description);
-
-    const { _id: userId } = newUser;
-
-    newCourse.instructors.push(userId);
-    newCourse.save();
 
     const { _id } = newCourse;
 
     const results = await findOneCourseService(_id);
 
     validateNotEmpty(results);
-    validateStringEquality(results.title, fakeCourseData.title);
-    validateStringEquality(results.description, fakeCourseData.description);
   });
 });

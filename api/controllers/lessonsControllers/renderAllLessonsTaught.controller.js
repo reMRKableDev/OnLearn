@@ -22,8 +22,6 @@ exports.renderAllLessonsTaughtController = async (req, res) => {
     return;
   }
 
-  console.log(isCourse);
-
   res.status(200).render('users/instructors/all-course-lessons', {
     local,
     isCourse,
