@@ -5,18 +5,19 @@
         {{/if}}
     </div>
     <div>
-        <form action="/my-courses/teach/{{_id}}/lesson/new" method="post">
+        <form action="/my-courses/teach/{{id}}/lesson/new" method="post">
             <div>
-                <label for="title">Lesson Title</label>
-                <input type="text" name="title" value="{{title}}" required>
+                <label for="topic">Lesson Topic</label>
+                <input type="text" name="topic" value="{{topic}}" required>
             </div>
             <div>
-                <label for="video-url">Lesson Video Url</label>
-                <input type="text" name="video-url" value="{{videoUrl}}" required>
+                <label for="videoUrl">Lesson Video Url</label>
+                <input type="url" name="videoUrl" placeholder="https://example.com" size="30" value="{{videoUrl}}"
+                    required>
             </div>
             <div>
-                <label for="description">Lesson Description</label>
-                <textarea name="description" id="" cols="30" rows="10" required></textarea>
+                <label for="content">Lesson Description</label>
+                <textarea name="content" id="" cols="30" rows="10" required></textarea>
             </div>
             <button type="submit">Submit</button>
         </form>

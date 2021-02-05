@@ -5,6 +5,7 @@ const {
   myCoursesTeachAllLessonsPrefix,
 } = require('../../configs');
 const {
+  createNewLessonController,
   renderCreateNewLessonController,
   renderAllLessonsTaughtController,
 } = require('../controllers');
@@ -23,5 +24,7 @@ router.get(
   isInstructor,
   renderCreateNewLessonController
 );
+
+router.post(myCoursesTeachNewLessonPrefix, createNewLessonController);
 
 module.exports = router;
