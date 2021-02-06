@@ -1,6 +1,5 @@
 const { createNewLessonService } = require('../index');
 const { fakeLessonData } = require('../../../../fixtures');
-const { createNewCourseService } = require('../../courseServices');
 const {
   dbConnect,
   dbDisconnect,
@@ -8,7 +7,6 @@ const {
 const {
   validateNotEmpty,
   validateInstanceOf,
-  validateArrayLength,
   validateStringEquality,
 } = require('../../../../../utils/test-utils/validators.utils');
 
