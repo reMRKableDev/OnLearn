@@ -1,4 +1,9 @@
 const { findAllLessonsService } = require('./findAllLessons.service');
 const { createNewLessonService } = require('./createNewLesson.service');
+const { findOneLessonService } = require('./findOneLesson.service');
 
-module.exports = { findAllLessonsService, createNewLessonService };
+module.exports = {
+  findOneLessonService,
+  findAllLessonsService,
+  createNewLessonService,
+};
