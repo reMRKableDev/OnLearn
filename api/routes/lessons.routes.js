@@ -1,11 +1,13 @@
 const { Router } = require('express');
 const { isLoggedInUser, isInstructor } = require('../middleware');
 const {
+  myCoursesLessonDetailsPrefix,
   myCoursesTeachNewLessonPrefix,
   myCoursesTeachAllLessonsPrefix,
 } = require('../../configs');
 const {
   createNewLessonController,
+  renderLessonDetailsController,
   renderCreateNewLessonController,
   renderAllLessonsTaughtController,
 } = require('../controllers');
@@ -24,7 +26,11 @@ router.get(
   isInstructor,
   renderCreateNewLessonController
 );
-
 router.post(myCoursesTeachNewLessonPrefix, createNewLessonController);
+router.get(
+  myCoursesLessonDetailsPrefix,
+  isLoggedInUser,
+  renderLessonDetailsController
+);
 
 module.exports = router;
