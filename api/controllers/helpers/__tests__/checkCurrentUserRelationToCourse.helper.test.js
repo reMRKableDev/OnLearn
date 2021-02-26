@@ -41,20 +41,4 @@ describe('checkCurrentUserRelationToCourse Helper Test Suite', () => {
     validateEquality(isCurrentUserInStudentList, false);
     validateEquality(isCurrentUserTheCourseInstructor, true);
   });
-
-  /*   test('should validate current user as a student', () => {
-    const dummyCurrentUserId = dummyStudentThreeId;
-
-    const {
-      isCurrentUserInStudentList,
-      isCurrentUserTheCourseInstructor,
-    } = checkCurrentUserRelationToCourseHelper(
-      dummyInstructorsList,
-      dummyCurrentUserId,
-      dummyStudentsList
-    );
-
-    validateEquality(isCurrentUserInStudentList, true);
-    validateEquality(isCurrentUserTheCourseInstructor, false);
-  }); */
 });

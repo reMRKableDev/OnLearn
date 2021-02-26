@@ -22,7 +22,7 @@ exports.renderAllLessonsTaughtController = async (req, res) => {
     return;
   }
 
-  res.status(200).render('users/instructors/all-course-lessons', {
+  res.status(200).render('users/common/all-course-lessons', {
     local,
     isCourse,
   });
