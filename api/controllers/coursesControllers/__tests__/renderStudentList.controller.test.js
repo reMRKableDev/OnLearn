@@ -7,7 +7,7 @@ const {
 } = require('../../../../utils/test-utils/courseControllerDeps');
 const {
   render500ErrorHelper,
-  redirectNonexistentCourseHelper,
+  redirectNonExistentDataHelper,
 } = require('../../helpers');
 const {
   findOneCourseService,
@@ -42,12 +42,12 @@ describe('renderStudentList Controller Test Suite', () => {
     validateMockValueToHaveBeenCalled(render500ErrorHelper);
   });
 
-  test('should validate redirectNonexistentCourseHelper is called', async () => {
+  test('should validate redirectNonExistentDataHelper is called', async () => {
     findOneCourseService.mockReturnValueOnce(null);
 
     await renderStudentListController(req, res);
 
-    validateMockValueToHaveBeenCalled(redirectNonexistentCourseHelper);
+    validateMockValueToHaveBeenCalled(redirectNonExistentDataHelper);
   });
 
   test('should validate res.status & res.render is called', async () => {

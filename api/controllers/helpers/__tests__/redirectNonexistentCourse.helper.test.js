@@ -1,4 +1,4 @@
-const { redirectNonexistentCourseHelper } = require('../index');
+const { redirectNonExistentDataHelper } = require('../index');
 const {
   mockRequest,
   mockResponse,
@@ -17,7 +17,7 @@ describe('redirectNonexistentCourse Helper Test Suite', () => {
     const req = mockRequest();
     const res = mockResponse();
 
-    redirectNonexistentCourseHelper(req, res);
+    redirectNonExistentDataHelper(req, res);
 
     const { flash } = req;
     const { redirect } = res;

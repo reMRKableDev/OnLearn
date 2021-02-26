@@ -3,7 +3,7 @@ const {
 } = require('../../../database/services/modelServices/courseServices');
 const {
   render500ErrorHelper,
-  redirectNonexistentCourseHelper,
+  redirectNonExistentDataHelper,
   checkCurrentUserRelationToCourseHelper,
 } = require('../helpers');
 
@@ -19,7 +19,7 @@ exports.renderCourseDetailsController = async (req, res) => {
   }
 
   if (isCourse === null) {
-    redirectNonexistentCourseHelper(req, res);
+    redirectNonExistentDataHelper(req, res);
     return;
   }
 

@@ -4,7 +4,7 @@ const {
 
 const {
   render500ErrorHelper,
-  redirectNonexistentCourseHelper,
+  redirectNonExistentDataHelper,
 } = require('../helpers');
 
 exports.renderStudentListController = async (req, res) => {
@@ -19,7 +19,7 @@ exports.renderStudentListController = async (req, res) => {
   }
 
   if (isCourse === null) {
-    redirectNonexistentCourseHelper(req, res);
+    redirectNonExistentDataHelper(req, res);
     return;
   }
 

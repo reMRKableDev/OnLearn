@@ -3,7 +3,7 @@ const {
 } = require('../../../database/services/modelServices/lessonServices');
 const {
   render500ErrorHelper,
-  redirectNonexistentCourseHelper,
+  redirectNonExistentDataHelper,
 } = require('../helpers');
 
 exports.renderLessonDetailsController = async (req, res) => {
@@ -17,9 +17,8 @@ exports.renderLessonDetailsController = async (req, res) => {
     return;
   }
 
-  // TODO: refactor redirectNonexistent... to take care of both lessons and courses.
   if (isLesson === null) {
-    redirectNonexistentCourseHelper(req, res);
+    redirectNonExistentDataHelper(req, res);
     return;
   }
 

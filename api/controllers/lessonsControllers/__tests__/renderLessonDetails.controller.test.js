@@ -8,7 +8,7 @@ const {
 } = require('../../../../database/services/modelServices/lessonServices');
 const {
   render500ErrorHelper,
-  redirectNonexistentCourseHelper,
+  redirectNonExistentDataHelper,
 } = require('../../helpers');
 const {
   validateMockValueToHaveBeenCalled,
@@ -39,12 +39,12 @@ describe('renderLessonDetails Controller Test Suite', () => {
     validateMockValueToHaveBeenCalled(render500ErrorHelper);
   });
 
-  test('should validate redirectNonexistentCourseHelper is called', async () => {
+  test('should validate redirectNonExistentDataHelper is called', async () => {
     findOneLessonService.mockReturnValueOnce(null);
 
     await renderLessonDetailsController(req, res);
 
-    validateMockValueToHaveBeenCalled(redirectNonexistentCourseHelper);
+    validateMockValueToHaveBeenCalled(redirectNonExistentDataHelper);
   });
 
   test('should validate res.status & res.render is called', async () => {
