@@ -1,21 +1,21 @@
+jest.mock('../../helpers');
+jest.mock('../../../../database/services/modelServices/lessonServices');
+
 const { renderLessonDetailsController } = require('../index');
 const {
   setupReqRes,
   clearMocks,
 } = require('../../../../utils/test-utils/courseControllerDeps');
 const {
-  findOneLessonService,
-} = require('../../../../database/services/modelServices/lessonServices');
-const {
   render500ErrorHelper,
   redirectNonExistentDataHelper,
 } = require('../../helpers');
 const {
+  findOneLessonService,
+} = require('../../../../database/services/modelServices/lessonServices');
+const {
   validateMockValueToHaveBeenCalled,
 } = require('../../../../utils/test-utils/validators.utils');
-
-jest.mock('../../helpers');
-jest.mock('../../../../database/services/modelServices/lessonServices');
 
 let req;
 let res;
@@ -26,7 +26,6 @@ describe('renderLessonDetails Controller Test Suite', () => {
     req = request;
     res = response;
   });
-
   afterEach(() => {
     clearMocks();
   });

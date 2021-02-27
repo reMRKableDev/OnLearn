@@ -1,9 +1,5 @@
 const { renderEditTaughtCourseController } = require('../index');
 const {
-  render500ErrorHelper,
-  redirectNonExistentDataHelper,
-} = require('../../helpers');
-const {
   findOneCourseService,
 } = require('../../../../database/services/modelServices/courseServices');
 const {
@@ -13,6 +9,10 @@ const {
   setupReqRes,
   clearMocks,
 } = require('../../../../utils/test-utils/courseControllerDeps');
+const {
+  render500ErrorHelper,
+  redirectNonExistentDataHelper,
+} = require('../../helpers');
 
 jest.mock('../../helpers');
 jest.mock('../../../../database/services/modelServices/courseServices');
