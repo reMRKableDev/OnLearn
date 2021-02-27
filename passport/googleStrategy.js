@@ -51,7 +51,6 @@ exports.googleAuthStrategy = new GoogleStrategy(
         accessToken
       );
 
-
       if (isGoogleUser instanceof Error) {
         return done(isGoogleUser);
       }
