@@ -1,6 +1,9 @@
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const { googleAuth } = require('../configs');
 const User = require('../database/models/user.model');
+const {
+  createNewGoogleUserService,
+} = require('../database/services/modelServices/userServices');
 const { handleAsyncFunction } = require('../utils/global-utils');
 
 exports.googleAuthStrategy = new GoogleStrategy(
@@ -44,7 +47,12 @@ exports.googleAuthStrategy = new GoogleStrategy(
       }
 
       // TODO: MAKE into a service
-      const [newGoogleUser, googleError] = await handleAsyncFunction(
+
+      const isGoogleUser = await createNewGoogleUserService(
+        profile,
+        accessToken
+      );
+      /*       const [newGoogleUser, googleError] = await handleAsyncFunction(
         User.create({
           local: {
             email: profile.emails[0].value.toLocaleLowerCase(),
@@ -60,13 +68,13 @@ exports.googleAuthStrategy = new GoogleStrategy(
           },
           profilePictureUrl: profile.photos[0].value,
         })
-      );
+      ); */
 
-      if (googleError) {
+      if (isGoogleUser instanceof Error) {
         return done(googleError);
       }
 
-      return done(null, newGoogleUser);
+      return done(null, isGoogleUser);
     }
 
     // user already exists and is logged in, we have to link accounts
