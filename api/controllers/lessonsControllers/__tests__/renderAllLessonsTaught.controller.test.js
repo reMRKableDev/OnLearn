@@ -2,19 +2,19 @@ const {
   renderAllLessonsTaughtController,
 } = require('../renderAllLessonsTaught.controller');
 const {
+  setupReqRes,
+  clearMocks,
+} = require('../../../../utils/test-utils/courseControllerDeps');
+const {
   render500ErrorHelper,
   redirectNonExistentDataHelper,
 } = require('../../helpers');
 const {
-  findOneCourseService,
-} = require('../../../../database/services/modelServices/courseServices');
-const {
   validateMockValueToHaveBeenCalled,
 } = require('../../../../utils/test-utils/validators.utils');
 const {
-  setupReqRes,
-  clearMocks,
-} = require('../../../../utils/test-utils/courseControllerDeps');
+  findOneCourseService,
+} = require('../../../../database/services/modelServices/courseServices');
 
 jest.mock('../../helpers');
 jest.mock('../../../../database/services/modelServices/courseServices');

@@ -1,8 +1,6 @@
 const { deleteTaughtCourseController } = require('../index');
 const { render500ErrorHelper } = require('../../helpers');
-const {
-  deleteCourseService,
-} = require('../../../../database/services/modelServices/courseServices');
+
 const {
   validateMockValueToHaveBeenCalled,
 } = require('../../../../utils/test-utils/validators.utils');
@@ -10,6 +8,9 @@ const {
   setupReqRes,
   clearMocks,
 } = require('../../../../utils/test-utils/courseControllerDeps');
+const {
+  deleteCourseService,
+} = require('../../../../database/services/modelServices/courseServices');
 
 jest.mock('../../helpers');
 jest.mock('../../../../database/services/modelServices/courseServices');
