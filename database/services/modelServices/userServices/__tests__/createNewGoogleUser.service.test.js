@@ -5,12 +5,9 @@ const {
 } = require('../../../../../utils/test-utils/dbHandler.utils');
 const {
   validateNotEmpty,
-  validateEquality,
-  validateInstanceOf,
   validateStringEquality,
   validateMongoDuplicationError,
 } = require('../../../../../utils/test-utils/validators.utils');
-const { Error } = require('mongoose');
 
 const fakeGoogleProfileData = {
   id: '1a2b3c',
