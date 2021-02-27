@@ -46,32 +46,14 @@ exports.googleAuthStrategy = new GoogleStrategy(
         return done(null, userResults);
       }
 
-      // TODO: MAKE into a service
-
       const isGoogleUser = await createNewGoogleUserService(
         profile,
         accessToken
       );
-      /*       const [newGoogleUser, googleError] = await handleAsyncFunction(
-        User.create({
-          local: {
-            email: profile.emails[0].value.toLocaleLowerCase(),
-            username: profile.displayName,
-            firstName: profile.name.givenName,
-            lastName: profile.name.familyName,
-          },
-          google: {
-            id: profile.id,
-            token: accessToken,
-            name: profile.displayName,
-            email: profile.emails[0].value.toLocaleLowerCase(),
-          },
-          profilePictureUrl: profile.photos[0].value,
-        })
-      ); */
+
 
       if (isGoogleUser instanceof Error) {
-        return done(googleError);
+        return done(isGoogleUser);
       }
 
       return done(null, isGoogleUser);
