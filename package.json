@@ -41,7 +41,7 @@
     "dotenv": "8.2.0",
     "express": "4.17.1",
     "express-session": "1.17.1",
-    "express-validator": "6.10.0",
+    "express-validator": "6.10.1",
     "hbs": "4.1.2",
     "http-errors": "1.8.0",
     "mongodb-memory-server": "6.9.6",
