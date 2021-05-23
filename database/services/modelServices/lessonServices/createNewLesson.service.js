@@ -1,7 +1,5 @@
 const Lesson = require('../../../models/lesson.model');
-const {
-  handleAsyncFunction,
-} = require('../../../../utils/global-utils/handleAsyncFunction.utils');
+const { handleAsyncFunction } = require('../../../../utils/global-utils');
 
 exports.createNewLessonService = async (topic, content, videoUrl) => {
   const [lessonResults, lessonError] = await handleAsyncFunction(

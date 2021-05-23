@@ -1,11 +1,23 @@
 const User = require('../../../models/user.model');
 const {
   handleAsyncFunction,
-} = require('../../../../utils/global-utils/handleAsyncFunction.utils');
+  ensureDataInVulnerableOfInjectionAttacks,
+} = require('../../../../utils/global-utils');
 const { hashPasswordHelper } = require('../../helpers');
 
 exports.createNewUserService = async (requestBody) => {
-  const { firstName, lastName, email, username, password, role } = requestBody;
+  const secureRequestBody = ensureDataInVulnerableOfInjectionAttacks(
+    requestBody
+  );
+
+  const {
+    firstName,
+    lastName,
+    email,
+    username,
+    password,
+    role,
+  } = secureRequestBody;
 
   const isHashedPassword = await hashPasswordHelper(password);
 

@@ -5,9 +5,14 @@ const {
   findOneCourseService,
 } = require('../../../database/services/modelServices/courseServices');
 const { render500ErrorHelper } = require('../helpers');
+const {
+  ensureDataInVulnerableOfInjectionAttacks,
+} = require('../../../utils/global-utils');
 
 exports.createNewLessonController = async (req, res) => {
-  const { topic, content, videoUrl } = req.body;
+  const secureRequestBody = ensureDataInVulnerableOfInjectionAttacks(req.body);
+
+  const { topic, content, videoUrl } = secureRequestBody;
   const { id } = req.params;
 
   const newLesson = await createNewLessonService(topic, content, videoUrl);
