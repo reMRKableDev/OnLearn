@@ -1,0 +1,25 @@
+<section>
+    <div>
+        <h2>Edit Lesson</h2>
+        <form action="/my-courses/teach/lesson/{{isLesson._id}}/delete" method="post">
+            <button type="submit">Delete Lesson</button>
+        </form>
+        <form action="/my-courses/teach/lesson/{{isLesson._id}}/edit" method="post">
+            <div>
+                <label for="topic">Lesson Topic</label>
+                <input type="text" name="topic" value="{{isLesson.topic}}" required>
+            </div>
+            <div>
+                <label for="videoUrl">Lesson Video Url</label>
+                <input type="url" name="videoUrl" placeholder="https://example.com" size="30" value="{{isLesson.videoUrl}}"
+                    required>
+            </div>
+            <div>
+                <label for="content">Lesson Description</label>
+                <textarea name="content" id="" cols="30" rows="10" required>{{isLesson.content}}</textarea>
+
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>

@@ -1,12 +1,14 @@
 const { Router } = require('express');
 const { isLoggedInUser, isInstructor } = require('../middleware');
 const {
+  myCoursesLessonEditPrefix,
   myCoursesLessonDetailsPrefix,
   myCoursesTeachNewLessonPrefix,
   myCoursesTeachAllLessonsPrefix,
 } = require('../../configs');
 const {
   createNewLessonController,
+  renderEditLessonController,
   renderLessonDetailsController,
   renderCreateNewLessonController,
   renderAllLessonsTaughtController,
@@ -31,6 +33,11 @@ router.get(
   myCoursesLessonDetailsPrefix,
   isLoggedInUser,
   renderLessonDetailsController
+);
+router.get(
+  myCoursesLessonEditPrefix,
+  isLoggedInUser,
+  renderEditLessonController
 );
 
 module.exports = router;

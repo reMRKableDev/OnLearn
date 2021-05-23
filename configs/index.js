@@ -36,6 +36,7 @@ module.exports = {
   myCoursesTeachAllLessonsPrefix: '/my-courses/teach/:id/all-lessons',
   myCoursesTeachNewLessonPrefix: '/my-courses/teach/:id/lesson/new',
   myCoursesLessonDetailsPrefix: '/my-courses/teach/lesson/:id/',
+  myCoursesLessonEditPrefix: '/my-courses/teach/lesson/:id/edit',
   myCoursesLearnPrefix: '/my-courses/learn/:id',
 
   /* Database  */
