@@ -2,9 +2,14 @@ const {
   createNewCourseService,
 } = require('../../../database/services/modelServices/courseServices');
 const { render500ErrorHelper } = require('../helpers');
+const {
+  ensureDataInVulnerableOfInjectionAttacks,
+} = require('../../../utils/global-utils');
 
 exports.createNewCourseController = async (req, res) => {
-  const { title, description } = req.body;
+  const secureRequestBody = ensureDataInVulnerableOfInjectionAttacks(req.body);
+
+  const { title, description } = secureRequestBody;
   const { _id } = req.user;
 
   const newCourse = await createNewCourseService(title, description);
