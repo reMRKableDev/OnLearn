@@ -6,11 +6,9 @@ exports.ensureDataInVulnerableOfInjectionAttacks = (incomingRequestBodyObj) => {
     (objKey) => objKey.toString()
   );
 
-  const reassembledData = Object.assign(
+  return Object.assign(
     ...incomingObjKeysList.map((objKeyItem, index) => ({
       [objKeyItem]: parsedValuesToStringToPreventInjectionAttacks[index],
     }))
   );
-
-  return reassembledData;
 };
