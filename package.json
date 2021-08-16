@@ -63,7 +63,7 @@
     "eslint-plugin-jest": "24.3.6",
     "eslint-plugin-prettier": "3.4.0",
     "jest": "27.0.6",
-    "mongodb": "3.6.9",
+    "mongodb": "3.6.11",
     "prettier": "2.3.2",
     "supertest": "6.1.3"
   },
