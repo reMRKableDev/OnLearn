@@ -55,7 +55,7 @@
     "serve-favicon": "2.5.0"
   },
   "devDependencies": {
-    "@shelf/jest-mongodb": "4.1.7",
+    "@shelf/jest-mongodb": "4.2.0",
     "eslint": "8.56.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-prettier": "8.6.0",
