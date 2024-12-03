@@ -38,7 +38,7 @@
     "connect-mongo": "5.1.0",
     "cookie-parser": "1.4.7",
     "debug": "4.3.7",
-    "dotenv": "16.4.5",
+    "dotenv": "16.4.7",
     "express": "4.21.1",
     "express-session": "1.18.1",
     "express-validator": "7.2.0",
