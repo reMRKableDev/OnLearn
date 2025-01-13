@@ -1,10 +1,10 @@
-# OnLearn (POC) 🚀🚀🚀
+# NON-FUNCTIONAL!!!!!! OnLearn (POC) 🚀🚀🚀
 
 ![tests](https://github.com/reMRKableDev/OnLearn/workflows/tests/badge.svg) [![codecov](https://codecov.io/gh/reMRKableDev/OnLearn/branch/main/graph/badge.svg?token=8IAKVRS55T)](https://codecov.io/gh/reMRKableDev/OnLearn) [![CodeFactor](https://www.codefactor.io/repository/github/remrkabledev/onlearn/badge)](https://www.codefactor.io/repository/github/remrkabledev/onlearn) [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=reMRKableDev_OnLearn&metric=alert_status)](https://sonarcloud.io/dashboard?id=reMRKableDev_OnLearn) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=reMRKableDev_OnLearn&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=reMRKableDev_OnLearn) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=reMRKableDev_OnLearn&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=reMRKableDev_OnLearn) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=reMRKableDev_OnLearn&metric=security_rating)](https://sonarcloud.io/dashboard?id=reMRKableDev_OnLearn) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=reMRKableDev_OnLearn&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=reMRKableDev_OnLearn) [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=reMRKableDev_OnLearn&metric=sqale_index)](https://sonarcloud.io/dashboard?id=reMRKableDev_OnLearn) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=reMRKableDev_OnLearn&metric=bugs)](https://sonarcloud.io/dashboard?id=reMRKableDev_OnLearn) [![time tracker](https://wakatime.com/badge/github/reMRKableDev/OnLearn.svg)](https://wakatime.com/badge/github/reMRKableDev/OnLearn) 
 
 A simple online Learning Management System (LMS) built with Node.js. 
 
-This project isn't production-ready. At best it is a Proof Of Concept (POC).
+This project isn't production-ready. At best it is a Proof Of Concept (POC). IT IS NOT FUNCTIONAL!!!!
 
 🚨 **Important links to check out** 
 
