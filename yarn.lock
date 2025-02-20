@@ -662,10 +662,10 @@
   resolved "https://registry.yarnpkg.com/@rtsao/scc/-/scc-1.1.0.tgz#927dd2fae9bc3361403ac2c7a00c32ddce9ad7e8"
   integrity sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==
 
-"@shelf/jest-mongodb@4.3.2":
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/@shelf/jest-mongodb/-/jest-mongodb-4.3.2.tgz#b94096b9bcd8bc0bb88472b41de8f64d384bb834"
-  integrity sha512-LL7NBaT04sJspoOZXqw3HGLw0+XnZNlIV72x2ymzyuloqIKXwgUl8eL1XKDUh4Ud8dUBRMrOngCQBcHKjWnrHQ==
+"@shelf/jest-mongodb@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@shelf/jest-mongodb/-/jest-mongodb-5.0.0.tgz#9ae133f8fbc0e0c60dae55efe2651863f264c18b"
+  integrity sha512-CS3RSs8dC4k3tXC9w961jtQ6BWpKiVUvdszzlXT5DqaSW4hCDxaR4ckfH+32bfO6z9+bj49Ga6Twyb+h+epz6A==
   dependencies:
     debug "4.3.4"
     mongodb-memory-server "9.2.0"
