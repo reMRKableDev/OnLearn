@@ -37,7 +37,7 @@
     "connect-flash": "0.1.1",
     "connect-mongo": "5.1.0",
     "cookie-parser": "1.4.7",
-    "debug": "4.4.0",
+    "debug": "4.4.3",
     "dotenv": "16.6.1",
     "express": "4.21.2",
     "express-session": "1.18.1",
