@@ -46,7 +46,7 @@
     "http-errors": "2.0.0",
     "mongodb-memory-server": "10.1.4",
     "mongoose": "8.19.0",
-    "morgan": "1.10.0",
+    "morgan": "1.10.1",
     "multer": "2.0.2",
     "multer-storage-cloudinary": "4.0.0",
     "passport": "0.7.0",
