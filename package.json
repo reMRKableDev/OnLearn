@@ -44,7 +44,7 @@
     "express-validator": "7.2.1",
     "hbs": "4.2.0",
     "http-errors": "2.0.0",
-    "mongodb-memory-server": "10.1.4",
+    "mongodb-memory-server": "10.2.2",
     "mongoose": "8.19.0",
     "morgan": "1.10.0",
     "multer": "2.0.2",
