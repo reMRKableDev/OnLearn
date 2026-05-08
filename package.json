@@ -45,7 +45,7 @@
     "hbs": "4.2.0",
     "http-errors": "2.0.0",
     "mongodb-memory-server": "10.4.3",
-    "mongoose": "8.19.0",
+    "mongoose": "8.22.1",
     "morgan": "1.10.0",
     "multer": "2.1.1",
     "multer-storage-cloudinary": "4.0.0",
