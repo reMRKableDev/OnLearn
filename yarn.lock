@@ -3635,10 +3635,10 @@ multer-storage-cloudinary@4.0.0:
   resolved "https://registry.yarnpkg.com/multer-storage-cloudinary/-/multer-storage-cloudinary-4.0.0.tgz#afc9e73c353668c57dda5b73b7bb84bae6635f6f"
   integrity sha512-25lm9R6o5dWrHLqLvygNX+kBOxprzpmZdnVKH4+r68WcfCt8XV6xfQaMuAg+kUE5Xmr8mJNA4gE0AcBj9FJyWA==
 
-multer@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/multer/-/multer-2.1.1.tgz#122d819244fbdfee1efddd9147426691014385b7"
-  integrity sha512-mo+QTzKlx8R7E5ylSXxWzGoXoZbOsRMpyitcht8By2KHvMbf3tjwosZ/Mu/XYU6UuJ3VZnODIrak5ZrPiPyB6A==
+multer@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/multer/-/multer-2.3.0.tgz#46f5a98c34e09661ff089fa49ae487846bd5b4fd"
+  integrity sha512-cjNbm3sttszgZeGfJR124D+jFEfkXCVAsoPBmFn9X7UxmDSFHWqE2CoEj0vrmSpuAFnqWR1Szcm9QTsiHr60Xw==
   dependencies:
     append-field "^1.0.0"
     busboy "^1.6.0"
